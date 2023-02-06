@@ -1,0 +1,27 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(204, 220, 233, 1);
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  width: calc(98vw - 50px);
+  height: calc(98vh - 50px);
+  position: absolute;
+  top: calc(1vh + 25px);
+  left: calc(1vw + 25px);
+}

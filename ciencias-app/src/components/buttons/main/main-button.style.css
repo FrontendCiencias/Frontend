@@ -1,0 +1,58 @@
+.main-button {
+  width: 35vw;
+  height: 15vh;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 5px 5px 40px #5c94c92e;
+}
+
+.main-button .left {
+  width: 8vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-button .right {
+  width: 27vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-button img {
+  width: 5vw;
+  margin-left: -0.5vw;
+}
+
+.main-button h3 {
+  font-size: 3vw;
+}
+
+@media only screen and (max-width: 800px) {
+  .main-button .left {display: none;}
+  .main-button h3 {
+    font-size: 4vw !important;
+  }
+  .main-button .right {
+    width: 50vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-button {width: 50vw;}
+}
+
+@media only screen and (max-width: 400px) {
+  .main-button h3 {
+    font-size: 7vw !important;
+  }
+  .main-button .right {
+    width: 70vw;
+  }
+  .main-button {width: 70vw;}
+}
