@@ -1,21 +1,22 @@
-html {
-  margin: 0;
-  padding: 0;
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+  color: black;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
   background-color: rgba(204, 220, 233, 1);
 }
 
 #root {
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 .main-container {
@@ -24,4 +25,8 @@ body {
   position: absolute;
   top: calc(1vh + 25px);
   left: calc(1vw + 25px);
+}
+
+a {
+  cursor: pointer;
 }

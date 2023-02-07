@@ -1,0 +1,36 @@
+.action-button {
+  width: calc(3vw + 200px);
+  height: 8.5vh;
+  display: flex;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11), 5px 5px 20px #5c94c91b;
+  transition: width 0.7s, height 0.7s, transform 0.25s;
+}
+
+.action-button h3 {
+  font-size: calc(0.8vw + 10px);
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+}
+
+.primary {
+  background-color: #3090B9;
+}
+
+.primary h3 {
+  color: white;
+}
+
+.secondary {
+  background-color: white;
+}
+
+.secondary h3 {
+  color: black;
+}

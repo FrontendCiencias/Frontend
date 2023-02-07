@@ -1,0 +1,46 @@
+.input {
+  position: relative;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.input input {
+  width: calc(100% - 5px);
+  padding: 10px 0px 5px 5px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  outline: none;
+  background: transparent;
+}
+
+.input label {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input input:focus ~ label,
+.input input:valid ~ label{
+  top: 0px;
+  left: 0;
+  padding: 0;
+  color: #0c1213;
+  font-size: 12px;
+}
+
+.input input:-webkit-autofill,
+.input input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+/* .input input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+} */

@@ -1,14 +1,37 @@
 .main-button {
-  width: 35vw;
+  width: 38vw;
   height: 15vh;
   display: flex;
-  background-color: white;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 5px 5px 40px #5c94c92e;
+  background-color: white;
+  transition: width 0.7s, height 0.7s, transform 0.25s;
+}
+
+.main-button:hover {
+  transform: scale(1.05);
+}
+
+.color-0 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11), 5px 5px 20px #5c94c91b;
+}
+
+.color-1 {
+  box-shadow: 0 2px 4px rgba(245, 145, 78, 0.25), 5px 5px 20px rgba(245, 145, 78, 0.25);
+  transform: scale(1.05);
+}
+
+.color-2 {
+  box-shadow: 0 2px 4px rgba(46, 109, 162, 0.25), 5px 5px 20px rgba(59, 134, 191, 0.3);
+  transform: scale(1.05);
+}
+
+.color-3 {
+  box-shadow: 0 2px 4px rgba(208, 87, 87, 0.25), 5px 5px 20px rgba(208, 87, 87, 0.25);
+  transform: scale(1.05);
 }
 
 .main-button .left {
-  width: 8vw;
+  width: 9vw;
   height: 15vh;
   display: flex;
   align-items: center;
@@ -30,6 +53,7 @@
 
 .main-button h3 {
   font-size: 3vw;
+  transition: font-size 1s;
 }
 
 @media only screen and (max-width: 800px) {

@@ -1,0 +1,47 @@
+.signin {
+  overflow:hidden;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  /* width: calc(10vw + 300px); */
+  height: calc(98vh - 50px);
+  
+  border-radius: 0 10px 10px 0;
+  transition: all .5s ease;
+  width: 0;
+}
+
+.signin-shown {
+  width: calc(10vw + 300px);
+}
+
+.signin h2 {
+  font-size: calc(1vw + 30px);
+}
+
+.signin p {
+  margin-bottom: 2vh;
+}
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-signin .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: calc(6vw + 250px);
+  height: 25vh;
+}
+
+.form-signin .button-submit {
+  margin-top: 4vh;
+}

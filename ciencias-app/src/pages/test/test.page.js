@@ -1,17 +1,20 @@
 import { useSelector } from "react-redux";
-import Background from "../../components/background/background.component";
-import MainButton from "../../components/buttons/main/main-button.component";
+import Input from "../../components/input/input.component";
+import SignIn from "../../components/signin/signin.component";
 
 function Test() {
   const assistantState = useSelector(state => state.assistant)
   console.log(assistantState)
 
   return (
-    <div>
-      Hola
-      <MainButton text='Ciencias Aplicadas'/>
-      <MainButton text='Ciencias'/>
-      <MainButton text='Cimas'/>
+    <div className="main-container">
+      {/* <Input
+        type='text'
+        id='nombre'
+        label='Primer Nombre'
+      /> */}
+      <SignIn shown='signin-shown'/>
+      {/* <SignIn /> */}
     </div>
   );
 }
