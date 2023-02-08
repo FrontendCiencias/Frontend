@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import MainButton from "../../components/buttons/main/main-button.component";
-import SignIn from "../../components/signin/signin.component";
-import { changueCollegue } from "../../features/collegue/collegue.slice";
+import MainButton from "../../../components/buttons/main/main-button.component";
+import SignIn from "../../../components/session/signin/signin.component";
+import { changueCollegue } from "../../../features/collegue/collegue.slice";
 
-import "./main-secretary.style.css"
+import "./signin.style.css"
 
-const MainSecretary = () => {
+const SignInSecretary = () => {
   const dispatch = useDispatch()
 
   const [collegue, setCollegues] = useState(0)
@@ -112,4 +112,4 @@ const MainSecretary = () => {
   )
 }
 
-export default MainSecretary;
+export default SignInSecretary;

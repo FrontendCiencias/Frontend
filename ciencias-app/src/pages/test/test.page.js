@@ -1,10 +1,21 @@
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { test } from "../../api/test";
 import Input from "../../components/input/input.component";
-import SignIn from "../../components/signin/signin.component";
 
-function Test() {
+const Test = () => {
   const assistantState = useSelector(state => state.assistant)
-  console.log(assistantState)
+  const [ data, setData ] = useState({
+    email:'ema@cienciasperu.edu.pe',
+    password:'password'
+  })
+
+  useEffect(() => {
+    test(data).then(a => {
+      console.log(a)
+      setData(a)
+    })
+  }, []);
 
   return (
     <div className="main-container">
@@ -13,8 +24,8 @@ function Test() {
         id='nombre'
         label='Primer Nombre'
       /> */}
-      <SignIn shown='signin-shown'/>
-      {/* <SignIn /> */}
+      <p>{data.email}</p>
+      <p>{data.address}</p>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const collegueSlice = createSlice ({
   name: 'collegue',
-  initialState: 'none',
+  initialState: 'Ciencias Secundaria',
   reducers: {
     changueCollegue: (state, action) => {
       console.log(action.payload)

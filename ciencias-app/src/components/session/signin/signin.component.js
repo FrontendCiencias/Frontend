@@ -1,6 +1,6 @@
 import React from "react";
-import ActionButton from "../buttons/action/action-button.component";
-import Input from "../input/input.component";
+import ActionButton from "../../buttons/action/action-button.component";
+import Input from "../../input/input.component";
 
 import "./signin.style.css"
 

@@ -1,0 +1,13 @@
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  width: calc(2vw + 30px);
+  margin: 3vh 2vw;
+}
+
+.brand h3 {
+  font-size: calc(1vw + 30px);
+}

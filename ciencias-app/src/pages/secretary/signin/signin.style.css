@@ -11,13 +11,17 @@
 }
 
 .secretary-buttons {
+  height: calc(100% - 14vh);
   margin-top: 7vh;
   margin-bottom: 7vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .main-secretary-shown .secretary-buttons {
-  width: calc(90vw - 300px);
+  position: absolute;
+  left: 0;
+  width: calc(88vw - 350px);
 }

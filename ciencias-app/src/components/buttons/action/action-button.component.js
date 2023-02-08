@@ -1,14 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./action-button.style.css"
 
 class ActionButton extends React.Component {
   render() {
-    let { text, type } = this.props
+    let { text, type, url } = this.props
     return (
-      <a className={`action-button ${type}`}>
-        <h3>{text}</h3>
-      </a>
+      <Link to='../app/secretary'>
+        <div className={`action-button ${type}`}>
+          <h3>{text}</h3>
+        </div>
+      </Link>
     )
   }
 }

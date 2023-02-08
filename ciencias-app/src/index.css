@@ -25,6 +25,11 @@ body {
   position: absolute;
   top: calc(1vh + 25px);
   left: calc(1vw + 25px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
