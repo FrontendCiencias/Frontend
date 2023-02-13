@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import MainButton from "../../../components/buttons/main/main-button.component";
 import SignIn from "../../../components/session/signin/signin.component";
-import { changueCollegue } from "../../../features/collegue/collegue.slice";
+import { changeCollegue } from "../../../features/collegue/collegue.slice";
 
 import "./signin.style.css"
 
@@ -12,16 +12,16 @@ const SignInSecretary = () => {
 
   const [collegue, setCollegues] = useState(0)
 
-  const changueCA = () => {
-    dispatch(changueCollegue('Ciencias Aplicadas'))
+  const changeCA = () => {
+    dispatch(changeCollegue('Ciencias Aplicadas'))
     setCollegues(1)
   }
-  const changueCS = () => {
-    dispatch(changueCollegue('Ciencias Secundaria'))
+  const changeCS = () => {
+    dispatch(changeCollegue('Ciencias Secundaria'))
     setCollegues(2)
   }
-  const changueCC = () => {
-    dispatch(changueCollegue('Colegio Cimas'))
+  const changeCC = () => {
+    dispatch(changeCollegue('Colegio Cimas'))
     setCollegues(3)
   }
 
@@ -31,13 +31,13 @@ const SignInSecretary = () => {
         return (
           <div className="main-secretary-shown">
             <div className="secretary-buttons">
-              <a onClick={changueCA}>
+              <a onClick={changeCA}>
                 <MainButton text='Ciencias Aplicadas' active={1}/>
               </a>
-              <a onClick={changueCS}>
+              <a onClick={changeCS}>
                 <MainButton text='Ciencias Secundaria' active={0}/>
               </a>
-              <a onClick={changueCC}>
+              <a onClick={changeCC}>
                 <MainButton text='Colegio Cimas' active={0}/>
               </a>
             </div>
@@ -50,13 +50,13 @@ const SignInSecretary = () => {
         return (
           <div className="main-secretary-shown">
             <div className="secretary-buttons">
-              <a onClick={changueCA}>
+              <a onClick={changeCA}>
                 <MainButton text='Ciencias Aplicadas' active={0}/>
               </a>
-              <a onClick={changueCS}>
+              <a onClick={changeCS}>
                 <MainButton text='Ciencias Secundaria' active={2}/>
               </a>
-              <a onClick={changueCC}>
+              <a onClick={changeCC}>
                 <MainButton text='Colegio Cimas' active={0}/>
               </a>
             </div>
@@ -69,13 +69,13 @@ const SignInSecretary = () => {
         return (
           <div className="main-secretary-shown">
             <div className="secretary-buttons">
-              <a onClick={changueCA}>
+              <a onClick={changeCA}>
                 <MainButton text='Ciencias Aplicadas' active={0}/>
               </a>
-              <a onClick={changueCS}>
+              <a onClick={changeCS}>
                 <MainButton text='Ciencias Secundaria' active={0}/>
               </a>
-              <a onClick={changueCC}>
+              <a onClick={changeCC}>
                 <MainButton text='Colegio Cimas' active={3}/>
               </a>
             </div>
@@ -88,13 +88,13 @@ const SignInSecretary = () => {
         return (
           <div className="main-secretary-notshown">
             <div className="secretary-buttons">
-              <a onClick={changueCA}>
+              <a onClick={changeCA}>
                 <MainButton text='Ciencias Aplicadas' active={0}/>
               </a>
-              <a onClick={changueCS}>
+              <a onClick={changeCS}>
                 <MainButton text='Ciencias Secundaria' active={0}/>
               </a>
-              <a onClick={changueCC}>
+              <a onClick={changeCC}>
                 <MainButton text='Colegio Cimas' active={0}/>
               </a>
             </div>

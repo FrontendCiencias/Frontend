@@ -1,0 +1,18 @@
+.slots {
+  width: 5vw;
+  height: 4.5vh;
+  display: flex;
+  border-radius: 5px;
+  margin: 0.8vh 10px;
+  padding: 0 10px;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11), 5px 5px 20px #5c94c91b;
+}
+
+.red {
+  background-color: #F9D0D0;
+}
+
+.green {
+  background-color: #E0F9D0;
+}

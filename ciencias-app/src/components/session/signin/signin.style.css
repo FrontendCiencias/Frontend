@@ -45,3 +45,12 @@
 .form-signin .button-submit {
   margin-top: 4vh;
 }
+
+.error {
+  margin-top: 2vh;
+  color: red;
+}
+
+.loading {
+  margin-top: 2vh;
+}

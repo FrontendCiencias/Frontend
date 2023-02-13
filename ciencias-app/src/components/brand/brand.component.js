@@ -9,7 +9,7 @@ class Brand extends React.Component {
   render() {
     let { text } = this.props
     return (
-      <Link to='../ciencias-aplicadas/secretary'>
+      <Link to='../app/signin'>
         <div className='brand'>
           <img src={logo}/>
           <h3>{text}</h3>

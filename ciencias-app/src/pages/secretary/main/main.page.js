@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Brand from "../../../components/brand/brand.component";
 
+import Brand from "../../../components/brand/brand.component";
 import MainButton from "../../../components/buttons/main/main-button.component";
+import Profile from "../../../components/session/profile/profile.component";
 
 import "./main.style.css"
 
@@ -13,26 +15,27 @@ const MainSecretary = () => {
       <div className="header">
         <Brand text={collegueState}/>
       </div>
-      <div className="buttons">
-        <MainButton
+      <div className="content">
+        <Link to='./register'><MainButton
           text='Matrículas'
+        /></Link>
+        <MainButton
+          text='Asistencia'
         />
         <MainButton
-          text='Matrículas'
+          text='Pagos'
         />
         <MainButton
-          text='Matrículas'
+          text='Notas'
         />
         <MainButton
-          text='Matrículas'
+          text='Gestionar'
         />
         <MainButton
-          text='Matrículas'
-        />
-        <MainButton
-          text='Matrículas'
+          text='Horarios'
         />
       </div>
+      <Profile name='Pedro' surname='Bustamante' email='jpostigo@cienciasperu.edu.pe' collegue={collegueState}/>
     </div>
   )
 }

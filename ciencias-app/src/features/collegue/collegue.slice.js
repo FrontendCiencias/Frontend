@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { getCollegue } from "../../functions/collegue.function";
+
 export const collegueSlice = createSlice ({
   name: 'collegue',
-  initialState: 'Ciencias Secundaria',
+  initialState: getCollegue(),
   reducers: {
-    changueCollegue: (state, action) => {
+    changeCollegue: (state, action) => {
       console.log(action.payload)
       state = action.payload
       return state
@@ -12,6 +14,6 @@ export const collegueSlice = createSlice ({
   },
 })
 
-export const { changueCollegue } = collegueSlice.actions
+export const { changeCollegue } = collegueSlice.actions
 
 export default collegueSlice.reducer
