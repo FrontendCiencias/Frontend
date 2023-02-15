@@ -4,6 +4,7 @@ import { getSlots } from "../../../api/secretary.api";
 
 import Brand from "../../../components/brand/brand.component"
 import ActionButton from "../../../components/buttons/action/action-button.component";
+import CreateChildren from "../../../components/buttons/create/children/create-children.component";
 import CreateParents from "../../../components/buttons/create/parents/create-parents.component";
 import Profile from "../../../components/session/profile/profile.component";
 import { Slots } from "../../../components/slots/slots.component";
@@ -12,6 +13,7 @@ import { formatGrade } from "../../../functions/collegue.function";
 import "./register.style.css"
 
 const RegisterSecretary = () => {
+  
   const collegueState = useSelector(state => state.collegue)
   const registerState = useSelector(state => state.register)
 
@@ -37,14 +39,17 @@ const RegisterSecretary = () => {
 
   const listParents = () => {
     return registerState.parents.map((p, i) => {
-      console.log(p)
       return (
         <CreateParents type='parent' name={p.names.name1} key={p.dni}/>
       )
     })
   }
   const listChildren = () => {
-    // for 
+    return registerState.students.map((c, i) => {
+      return (
+        <CreateChildren type='children' name={c.names.name1} key={c.dni}/>
+      )
+    })
   }
 
   return (
@@ -60,19 +65,21 @@ const RegisterSecretary = () => {
               <div className="list">
                 {listParents()}
                 <CreateParents type='plus'/>
+                <div className="void"></div>
               </div>
             </div>
             <div className="children">
               <div className="title">ALUMNOS</div>
               <div className="list">
-                {/* {listChildren()} */}
-                <CreateParents type='plus'/>
+                {listChildren()}
+                <CreateChildren type='plus'/>
+                <div className="void"></div>
               </div>
             </div>
           </div>
           <div className="column-2">
             <h3>
-              Vacantes Disponibles:
+              Vacantes en uso:
             </h3>
             <div className="vacancies">
               {listSlots()}

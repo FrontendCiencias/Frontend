@@ -7,7 +7,8 @@ export const Input = (props) => {
   return (
     <div className="input form-box">
       <input onChange={(event)=>{
-        setValues({...values, error: false, [id]: event.target.value})
+        console.log(values)
+        setValues({...values, [id]: event.target.value})
       }} value={values.id} id={id} type={type} required/>
       <label>{label}</label>
     </div>

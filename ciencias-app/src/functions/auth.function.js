@@ -28,3 +28,14 @@ export const getUser = () => {
   }
     return {};
 }
+
+export const getToken = () => {
+  if (localStorage.getItem('jwt')) {
+    if (JSON.parse(localStorage.getItem('jwt')).token !== '') {
+      console.log(JSON.parse(localStorage.getItem('jwt')))
+      return JSON.parse(localStorage.getItem('jwt')).token;
+    }
+    return {};
+  }
+    return {};
+}

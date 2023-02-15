@@ -1,0 +1,38 @@
+.pop-up-children {
+  width: calc(25vw + 550px);
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  background-color: white;
+  transition: width 0.7s, height 0.7s, transform 0.25s;
+  margin: 0;
+  padding-top: 0.5vh;
+}
+
+.pop-up-children .inputs {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3vw 1vh 3vw;
+}
+
+.pop-up-children .row {
+  display: flex;
+  height: max-content;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.pop-up-children .col {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: space-between;
+  padding: 2vh 2vw;
+}
+
+.pop-up-children .payments {
+  width: 50%;
+}

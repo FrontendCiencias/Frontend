@@ -8,6 +8,7 @@ import MainSecretary from "../pages/secretary/main/main.page.js";
 import RegisterSecretary from "../pages/secretary/register/register.page.js";
 import SignInSecretary from "../pages/secretary/signin/signin.page.js";
 import Test from "../pages/test/test.page.js";
+import { SecretaryRoute } from "./roles.routes.js";
 
 const Router = () => {
   return (
@@ -16,10 +17,15 @@ const Router = () => {
         <Route path = "/" exact element = { <Main/> } />
         <Route path = "/app/signout" exact element = { <SignOut/> } />
         <Route path = "/app/signin" exact element = { <SignInSecretary/> } />
-        <Route path = "/app/secretary" exact element = { <MainSecretary/> } />
-        <Route path = "/app/secretary/register" exact element = { <RegisterSecretary/> } />
-        <Route path = "/app/secretary/register/contract" exact element = { <Contract/> } />
+        <Route path = "/app/secretary" exact element = {
+          <SecretaryRoute>
+            <MainSecretary/>
+          </SecretaryRoute>
+        } />
+        <Route path = "/app/secretary/register" exact element = { <SecretaryRoute><RegisterSecretary/></SecretaryRoute> } />
+        <Route path = "/app/secretary/register/contract" exact element = { <SecretaryRoute><Contract/></SecretaryRoute> } />
         <Route path = "/test" exact element = { <Test/> } />
+
       </Routes>
     </BrowserRouter>
   )
