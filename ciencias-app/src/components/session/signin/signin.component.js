@@ -5,12 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { signin } from "../../../api/secretary.api";
 import { authenticate, isAuthenticated } from "../../../functions/auth.function";
 
-import ActionButton from "../../buttons/action/action-button.component";
+import { ActionButton } from "../../buttons/action/action-button.component";
 import Input from "../../input/input.component";
 
 import "./signin.style.css"
+import { changeUser } from "../../../features/auth/auth.slice";
 
 export const SignIn = (props) => {
+
+  const dispatch = useDispatch()
 
   const collegueState = useSelector(state => state.collegue)
 
@@ -29,12 +32,13 @@ export const SignIn = (props) => {
     event.preventDefault()
     setValues({...values, error: false, loading: true})
     signin({email, password})
-    .then(data => {
-      if (data.error) {
-        setValues({...values, error: data.error, loading: false})
+    .then(d => {
+      if (d.error) {
+        setValues({...values, error: d.error, loading: false})
       } else { 
+        dispatch(changeUser(d.data))
         authenticate(
-          {...data, collegue:collegueState}, () => {
+          {...d, collegue:collegueState}, () => {
             setValues({
               ...values,
               redirect: true
@@ -97,6 +101,7 @@ export const SignIn = (props) => {
             <ActionButton
               type='primary'
               text='Ingresar'
+              collegue={collegueState}
             />
           </a>
         </div>

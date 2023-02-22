@@ -3,25 +3,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSlots } from "../../../api/secretary.api";
 
 import Brand from "../../../components/brand/brand.component"
-import ActionButton from "../../../components/buttons/action/action-button.component";
+import { ActionButton } from "../../../components/buttons/action/action-button.component";
 import CreateChildren from "../../../components/buttons/create/children/create-children.component";
 import CreateParents from "../../../components/buttons/create/parents/create-parents.component";
 import Profile from "../../../components/session/profile/profile.component";
 import { Slots } from "../../../components/slots/slots.component";
-import { formatGrade } from "../../../functions/collegue.function";
+import { formatGrade, getCollegue } from "../../../functions/collegue.function";
 
 import "./register.style.css"
 
 const RegisterSecretary = () => {
   
-  const collegueState = useSelector(state => state.collegue)
+  const collegueState = getCollegue()
   const registerState = useSelector(state => state.register)
 
   const [slots, setSlots] = useState([]) 
 
   useEffect(() => {
     getSlots({
-      collegue: collegueState
+      collegue: `Colegio ${collegueState}`
     }).then(d => {
       setSlots(d)
       console.log(d)
@@ -88,10 +88,11 @@ const RegisterSecretary = () => {
           </div>
         <div className="row-2">
           <ActionButton text='Cancelar' type='secondary'/>
-          <ActionButton text='Imprimir' type='primary'/>
+          <ActionButton text='Imprimir' type='primary'
+          collegue={collegueState}/>
         </div>
       </div>
-      <Profile name='Pedro' surname='Bustamante' email='jpostigo@cienciasperu.edu.pe' collegue={collegueState}/>
+      <Profile/>
     </div>
   )
 }

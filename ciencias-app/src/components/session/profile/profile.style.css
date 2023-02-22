@@ -24,7 +24,7 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #192f4243;
+  background-color: rgba(0, 0, 0, 0.3);
   transition: all .5s ease;
   border-radius: 10px;
 }
@@ -80,14 +80,11 @@
 
 .signout {
   position: relative;
-  left: calc(5vw + 120px);
+  left: calc(5vw + 30px);
   top: 30vh;
-  font-size: 3vh;
-  color: white;
-  background-color: dodgerblue;
   border-radius: 5px;
-  padding: 1vh 2vh;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11), 5px 5px 20px #5c94c91b;
+  /* padding: 1vh 2vh; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11), 5px 5px 20px #5c94c91b; */
 }
 
 @keyframes slidein {

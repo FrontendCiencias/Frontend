@@ -4,7 +4,7 @@ import "./create-children.style.css"
 
 import user_card from "../../../../svg/user-card.svg"
 import plus from "../../../../svg/plus.svg"
-import ActionButton from "../../action/action-button.component";
+import { ActionButton } from "../../action/action-button.component";
 import Input from "../../../input/input.component";
 
 export const CreateChildren = (props) => {
@@ -27,7 +27,15 @@ export const CreateChildren = (props) => {
   })
   const [payments, setPayments] = useState({
     march: '',
-    april: ''
+    april: '',
+    may: '',
+    june: '',
+    july: '',
+    agost: '',
+    september: '',
+    october: '',
+    november: '',
+    december: '',
   })
   const { name, type } = props
 
@@ -134,6 +142,22 @@ export const CreateChildren = (props) => {
                 </div>
               </div>
               <div className="col payments">
+                {/* <div className="row">
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='D. Ingreso'
+                    id='march'
+                  />
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Matrícula'
+                    id='april'
+                  />
+                </div> */}
                 <div className="row">
                   <Input
                     values={payments}
@@ -148,6 +172,70 @@ export const CreateChildren = (props) => {
                     type='text'
                     label='Abril'
                     id='april'
+                  />
+                </div>
+                <div className="row">
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Mayo'
+                    id='may'
+                  />
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Junio'
+                    id='june'
+                  />
+                </div>
+                <div className="row">
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Julio'
+                    id='july'
+                  />
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Agosto'
+                    id='agust'
+                    />
+                  </div>
+                <div className="row">
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Septiembre'
+                    id='september'
+                  />
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Octubre'
+                    id='october'
+                  />
+                </div>
+                <div className="row">
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Noviembre'
+                    id='november'
+                  />
+                  <Input
+                    values={payments}
+                    setValues={setPayments}
+                    type='text'
+                    label='Diciembre'
+                    id='dicember'
                   />
                 </div>
               </div>

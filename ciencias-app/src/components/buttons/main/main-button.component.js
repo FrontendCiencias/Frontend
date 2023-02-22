@@ -6,10 +6,11 @@ import logo from "../../../svg/logo.svg"
 
 class MainButton extends React.Component {
   render() {
-    let { text, active } = this.props
-    active!=1 && active!=2 && active!=3 ? active=0 : active=active
+    let { text, collegue, selected } = this.props
+    let classname = ""
+    selected ? classname = `main-button selected-${collegue}-color` : classname = `main-button shadow-${collegue}-color`
     return (
-      <div className={`main-button color-${active}`}>
+      <div className={classname}>
         <div className="left">
           <img src={logo}/>
         </div>

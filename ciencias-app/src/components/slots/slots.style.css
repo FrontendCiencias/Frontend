@@ -27,10 +27,14 @@
   justify-content: center;
 }
 
-.red {
+.danger {
   background-color: #F9D0D0;
 }
 
-.green {
+/* .safe {
   background-color: #E0F9D0;
+} */
+
+.safe {
+  background-color: rgba(124, 247, 151, 0.5);
 }

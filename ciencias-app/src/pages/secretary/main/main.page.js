@@ -16,26 +16,34 @@ const MainSecretary = () => {
         <Brand text={collegueState}/>
       </div>
       <div className="content">
-        <Link to='./register'><MainButton
-          text='Matrículas'
-        /></Link>
+        <Link to='./register'>
+          <MainButton
+            text='Matrículas'
+            collegue={collegueState}
+          />
+        </Link>
         <MainButton
           text='Asistencia'
+          collegue={collegueState}
         />
         <MainButton
           text='Pagos'
+          collegue={collegueState}
         />
         <MainButton
           text='Notas'
+          collegue={collegueState}
         />
         <MainButton
           text='Gestionar'
+          collegue={collegueState}
         />
         <MainButton
           text='Horarios'
+          collegue={collegueState}
         />
       </div>
-      <Profile name='Pedro' surname='Bustamante' email='jpostigo@cienciasperu.edu.pe' collegue={collegueState}/>
+      <Profile/>
     </div>
   )
 }

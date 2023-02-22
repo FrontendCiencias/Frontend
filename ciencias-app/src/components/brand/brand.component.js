@@ -12,7 +12,7 @@ class Brand extends React.Component {
       <Link to='../app/signin'>
         <div className='brand'>
           <img src={logo}/>
-          <h3>{text}</h3>
+          <h3>Colegio {text}</h3>
         </div>
       </Link>
     )

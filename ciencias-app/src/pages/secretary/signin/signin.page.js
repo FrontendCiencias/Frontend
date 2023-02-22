@@ -10,35 +10,28 @@ import "./signin.style.css"
 const SignInSecretary = () => {
   const dispatch = useDispatch()
 
-  const [collegue, setCollegues] = useState(0)
+  const [collegue, setCollegues] = useState("none")
 
-  const changeCA = () => {
-    dispatch(changeCollegue('Ciencias Aplicadas'))
-    setCollegues(1)
+  const changeCiencias = () => {
+    dispatch(changeCollegue('Ciencias'))
+    setCollegues("Ciencias")
   }
-  const changeCS = () => {
-    dispatch(changeCollegue('Ciencias Secundaria'))
-    setCollegues(2)
-  }
-  const changeCC = () => {
-    dispatch(changeCollegue('Colegio Cimas'))
-    setCollegues(3)
+  const changeCimas = () => {
+    dispatch(changeCollegue('Cimas'))
+    setCollegues("Cimas")
   }
 
   const buttons = () => {
     switch (collegue) {
-      case 1:
+      case "Ciencias":
         return (
           <div className="main-secretary-shown">
             <div className="secretary-buttons">
-              <a onClick={changeCA}>
-                <MainButton text='Ciencias Aplicadas' active={1}/>
+              <a onClick={changeCiencias}>
+                <MainButton text='Colegio Ciencias' selected={true} collegue={collegue}/>
               </a>
-              <a onClick={changeCS}>
-                <MainButton text='Ciencias Secundaria' active={0}/>
-              </a>
-              <a onClick={changeCC}>
-                <MainButton text='Colegio Cimas' active={0}/>
+              <a onClick={changeCimas}>
+                <MainButton text='Colegio Cimas' selected={false} collegue={collegue}/>
               </a>
             </div>
             <SignIn shown='signin-shown'/>
@@ -46,37 +39,15 @@ const SignInSecretary = () => {
         )
         break;
 
-      case 2:
+      case "Cimas":
         return (
           <div className="main-secretary-shown">
             <div className="secretary-buttons">
-              <a onClick={changeCA}>
-                <MainButton text='Ciencias Aplicadas' active={0}/>
+              <a onClick={changeCiencias}>
+                <MainButton text='Colegio Ciencias' selected={false} collegue={collegue}/>
               </a>
-              <a onClick={changeCS}>
-                <MainButton text='Ciencias Secundaria' active={2}/>
-              </a>
-              <a onClick={changeCC}>
-                <MainButton text='Colegio Cimas' active={0}/>
-              </a>
-            </div>
-            <SignIn shown='signin-shown'/>
-          </div>
-        )
-        break;
-      
-      case 3:
-        return (
-          <div className="main-secretary-shown">
-            <div className="secretary-buttons">
-              <a onClick={changeCA}>
-                <MainButton text='Ciencias Aplicadas' active={0}/>
-              </a>
-              <a onClick={changeCS}>
-                <MainButton text='Ciencias Secundaria' active={0}/>
-              </a>
-              <a onClick={changeCC}>
-                <MainButton text='Colegio Cimas' active={3}/>
+              <a onClick={changeCimas}>
+                <MainButton text='Colegio Cimas' selected={true} collegue={collegue}/>
               </a>
             </div>
             <SignIn shown='signin-shown'/>
@@ -88,14 +59,11 @@ const SignInSecretary = () => {
         return (
           <div className="main-secretary-notshown">
             <div className="secretary-buttons">
-              <a onClick={changeCA}>
-                <MainButton text='Ciencias Aplicadas' active={0}/>
+              <a onClick={changeCiencias}>
+                <MainButton text='Colegio Ciencias' selected={false} collegue={collegue}/>
               </a>
-              <a onClick={changeCS}>
-                <MainButton text='Ciencias Secundaria' active={0}/>
-              </a>
-              <a onClick={changeCC}>
-                <MainButton text='Colegio Cimas' active={0}/>
+              <a onClick={changeCimas}>
+                <MainButton text='Colegio Cimas' selected={false} collegue={collegue}/>
               </a>
             </div>
             <SignIn shown='signin-notshown'/>

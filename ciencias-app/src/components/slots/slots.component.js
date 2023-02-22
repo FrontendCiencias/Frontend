@@ -8,7 +8,7 @@ export const Slots = (props) => {
         <div className='grade'>
           {`${grade}:`}
         </div>
-        <div className='used red'>
+        <div className='used danger'>
           {`${used}/${total}`}
         </div>
       </div>
@@ -19,7 +19,7 @@ export const Slots = (props) => {
         <div className='grade'>
           {`${grade}:`}
         </div>
-        <div className='used green'>
+        <div className='used safe'>
           {`${used}/${total}`}
         </div>
       </div>

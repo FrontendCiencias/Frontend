@@ -6,6 +6,7 @@ import user from '../../../svg/user.svg'
 import back from '../../../svg/back.svg'
 
 import "./profile.style.css"
+import { ActionButton } from "../../buttons/action/action-button.component";
 
 export const Profile = () => {
   const [shown, setShown] = useState(false)
@@ -28,9 +29,16 @@ export const Profile = () => {
             <h4>{`${authState.names.name1} ${authState.names.surname1}`}</h4>
             <p>{authState.email}</p>
             <Link to={"/app/signout"}>
-              <div className="signout">Salir</div>
+              <div className="signout">
+                <ActionButton
+                  text="Salir"
+                  type="primary"
+                  collegue={collegueState}
+                />
+              </div>
+              
             </Link>
-            <h5>Secretaría de {collegueState}</h5>
+            <h5>Secretaría del Colegio {collegueState}</h5>
           </div>
         </div>
       </div>

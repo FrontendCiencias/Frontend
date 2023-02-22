@@ -1,4 +1,4 @@
-import Background from "../../components/background/background.component";
+import { Background } from "../../components/background/background.component";
 
 const Main = () => {
   return (

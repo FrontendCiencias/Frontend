@@ -4,7 +4,7 @@ import "./create-parents.style.css"
 
 import user_card from "../../../../svg/user-card.svg"
 import plus from "../../../../svg/plus.svg"
-import ActionButton from "../../action/action-button.component";
+import { ActionButton } from "../../action/action-button.component";
 import Input from "../../../input/input.component";
 import { createParents } from "../../../../api/secretary.api";
 import { getToken } from "../../../../functions/auth.function";

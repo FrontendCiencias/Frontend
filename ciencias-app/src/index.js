@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 
 import "./index.css"
-import Background from './components/background/background.component.js';
+import { Background } from './components/background/background.component.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

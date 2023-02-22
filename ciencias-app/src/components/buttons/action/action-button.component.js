@@ -1,19 +1,19 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import "./action-button.style.css"
 
-class ActionButton extends React.Component {
-  render() {
-    let { text, type } = this.props
-    return (
-      <div>
-        <div className={`action-button ${type}`}>
-          <h3>{text}</h3>
-        </div>
+export const ActionButton = (props) => {
+  const collegue = useSelector(state => state.collegue)
+  let { text, type } = props
+  let classname = ""
+  type=="primary" ? classname = `action-button ${type} heavy-${collegue}-color` : classname = `action-button ${type}`
+  return (
+    <div>
+      <div className={classname}>
+        <h3>{text}</h3>
       </div>
-    )
-  }
+    </div>
+  )
 }
-
-export default ActionButton
