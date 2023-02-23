@@ -73,3 +73,28 @@ export const formatGrade = (format, grade) => {
   }
   return grades[grade][format]
 }
+
+
+export const formatCollegue = (g, collegue) => {
+  const grades = {
+    '3_inicial': "Ciencias Aplicadas",
+    '4_inicial': "Ciencias Aplicadas",
+    '5_inicial': "Ciencias Aplicadas",
+    '1ro_primaria': "Ciencias Aplicadas",
+    '2do_primaria': "Ciencias Aplicadas",
+    '3ro_primaria': "Ciencias Aplicadas",
+    '4to_primaria': "Ciencias Aplicadas",
+    '5to_primaria': "Ciencias Aplicadas",
+    '6to_primaria': "Ciencias Aplicadas",
+    '1ro_secundaria': "Ciencias Secundaria",
+    '2do_secundaria': "Ciencias Secundaria",
+    '3ro_secundaria': "Ciencias Secundaria",
+    '4to_secundaria': "Ciencias Secundaria",
+    '5to_secundaria': "Ciencias Secundaria",
+  }
+
+  if (collegue == "Cimas") {
+    return "Colegio Cimas"
+  }
+  return grades[g]
+}

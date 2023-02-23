@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSlots } from "../../../api/secretary.api";
+import { Link } from "react-router-dom";
+import { createContract, getSlots } from "../../../api/secretary.api";
 
 import Brand from "../../../components/brand/brand.component"
 import { ActionButton } from "../../../components/buttons/action/action-button.component";
 import CreateChildren from "../../../components/buttons/create/children/create-children.component";
 import CreateParents from "../../../components/buttons/create/parents/create-parents.component";
 import Profile from "../../../components/session/profile/profile.component";
+import { ListSlots } from "../../../components/slots/list-slots.component";
 import { Slots } from "../../../components/slots/slots.component";
 import { formatGrade, getCollegue } from "../../../functions/collegue.function";
 
@@ -21,21 +23,12 @@ const RegisterSecretary = () => {
 
   useEffect(() => {
     getSlots({
-      collegue: `Colegio ${collegueState}`
+      collegue: `${collegueState}`
     }).then(d => {
       setSlots(d)
-      console.log(d)
+      console.log(d.Inicial)
     })
   }, [])
-
-  const listSlots = () => {
-    return slots.map((s, i) => {
-
-      return (
-        <Slots grade={formatGrade(1,s.grade)} used={s.ocuped} total={s.capacity}/>
-      )
-    })
-  }
 
   const listParents = () => {
     return registerState.parents.map((p, i) => {
@@ -49,6 +42,28 @@ const RegisterSecretary = () => {
       return (
         <CreateChildren type='children' name={c.names.name1} key={c.dni}/>
       )
+    })
+  }
+
+  const clickSubmit = () => {
+    let studentsDNI = []
+    registerState.students.forEach((e) => {
+      studentsDNI.push(e.dni)
+    })
+    let tutorsDNI = []
+    registerState.parents.forEach((e) => {
+      tutorsDNI.push(e.dni)
+    })
+    console.log({studentsDNI,tutorsDNI})
+    createContract({studentsDNI,tutorsDNI})
+    .then(d => {
+      if (d.error) {
+        console.log(d)
+      } else {
+        localStorage.removeItem('lastContract')
+        localStorage.setItem('lastContract', JSON.stringify(registerState));
+        window.location.reload(false);
+      }
     })
   }
 
@@ -82,14 +97,18 @@ const RegisterSecretary = () => {
               Vacantes en uso:
             </h3>
             <div className="vacancies">
-              {listSlots()}
+              <ListSlots level="Inicial" vacancies={slots.Inicial}/>
+              <ListSlots level="Primaria" vacancies={slots.Primaria}/>
+              <ListSlots level="Secundaria" vacancies={slots.Secundaria}/>
             </div>
           </div>
           </div>
         <div className="row-2">
-          <ActionButton text='Cancelar' type='secondary'/>
-          <ActionButton text='Imprimir' type='primary'
-          collegue={collegueState}/>
+          <Link to="./..">
+            <ActionButton text='Cancelar' type='secondary'/>
+          </Link>
+          <a onClick={clickSubmit} href="/app/secretary/register/contract" target="_blank"><ActionButton text='Imprimir' type='primary'
+          collegue={collegueState}/></a>
         </div>
       </div>
       <Profile/>

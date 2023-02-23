@@ -1,9 +1,9 @@
 .slots {
-  width: 7vw;
-  height: 11%;
+  width: 6vw;
+  height: 4.5vh;
   display: flex;
   border-radius: 5px;
-  margin: 0.8vh 0px;
+  margin: 1vh 0.3vw;
   /* padding: 0 10px; */
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11), 5px 5px 20px #5c94c91b;
@@ -28,7 +28,7 @@
 }
 
 .danger {
-  background-color: #F9D0D0;
+  background-color: #ffc3c3;
 }
 
 /* .safe {
@@ -36,5 +36,21 @@
 } */
 
 .safe {
-  background-color: rgba(124, 247, 151, 0.5);
+  background-color: rgba(177, 247, 124, 0.3);
+}
+
+.level-vacancies {
+  width: 100%;
+}
+
+.level-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  /* justify-content: space-around; */
+  /* padding: 0 1vw; */
+}
+
+.level-title {
+  border-bottom: solid 1px;
 }

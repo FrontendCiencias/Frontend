@@ -52,10 +52,10 @@
   left: 10px;
 }
 .profile-shown .data div img {
-  width: 150px;
+  height: 20vh;
   position: relative;
   top: 10vh;
-  left: calc(5vw + 75px);
+  left: calc(5vw + 150px - 10vh);
 }
 .profile-shown .data h4 {
   width: max-content;

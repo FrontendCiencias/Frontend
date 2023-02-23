@@ -24,6 +24,7 @@ export const getSlots = collegue => {
     method: "post",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
     },
     mode: 'cors',
     body: JSON.stringify(collegue)
@@ -37,7 +38,6 @@ export const getSlots = collegue => {
 };
 
 export const createParents = parent => {
-  console.log(parent)
   return fetch(`${API}/tutor/create`, {
     method: "post",
     headers: {
@@ -46,6 +46,42 @@ export const createParents = parent => {
     },
     mode: 'cors',
     body: JSON.stringify(parent)
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
+export const createStudents = student => {
+  return fetch(`${API}/student/signup`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
+    },
+    mode: 'cors',
+    body: JSON.stringify(student)
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
+export const createContract = obj => {
+  return fetch(`${API}/contract/signup`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
+    },
+    mode: 'cors',
+    body: JSON.stringify(obj)
   })
     .then(response => {
       return response.json();

@@ -60,8 +60,7 @@ export const CreateParents = (props) => {
       dni:values.dni,
       address:values.address,
       phone:values.phone,
-      relationship:values.relationship,
-      token:getToken()
+      relationship:values.relationship
     }).then(d => {
       if (d.error) {
         console.log(d)

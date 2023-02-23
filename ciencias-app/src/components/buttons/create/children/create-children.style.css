@@ -1,6 +1,6 @@
 .pop-up-children {
   width: calc(25vw + 550px);
-  height: 88vh;
+  height: 92vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,11 @@
 .pop-up-children .inputs {
   display: flex;
   justify-content: space-between;
-  padding: 0 3vw 1vh 3vw;
+  padding: 0 3vw;
+}
+
+.pop-up-children .buttons {
+  padding-bottom: 2vh;
 }
 
 .pop-up-children .row {
