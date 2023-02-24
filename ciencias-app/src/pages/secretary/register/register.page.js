@@ -108,7 +108,7 @@ const RegisterSecretary = () => {
           <Link to="./..">
             <ActionButton text='Cancelar' type='secondary'/>
           </Link>
-          <a onClick={clickSubmit} href="./contract" target="_blank"><ActionButton text='Imprimir' type='primary'
+          <a onClick={clickSubmit} href="/app/secretary/contract" target="_blank"><ActionButton text='Imprimir' type='primary'
           collegue={collegueState}/></a>
         </div>
       </div>
