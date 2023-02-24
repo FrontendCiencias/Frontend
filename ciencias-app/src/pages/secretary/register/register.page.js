@@ -63,6 +63,7 @@ const RegisterSecretary = () => {
         localStorage.removeItem('lastContract')
         localStorage.setItem('lastContract', JSON.stringify(registerState));
         window.location.reload(false);
+        window.open("https://frontend-cienciasapp.vercel.app/app/secretary/register/contract","_blank")
       }
     })
   }
@@ -107,7 +108,7 @@ const RegisterSecretary = () => {
           <Link to="./..">
             <ActionButton text='Cancelar' type='secondary'/>
           </Link>
-          <a onClick={clickSubmit} href="/app/secretary/register/contract" target="_blank"><ActionButton text='Imprimir' type='primary'
+          <a onClick={clickSubmit}><ActionButton text='Imprimir' type='primary'
           collegue={collegueState}/></a>
         </div>
       </div>
