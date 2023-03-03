@@ -28,6 +28,8 @@
   font-weight: 500;
   border-bottom: solid 2px;
   margin: 2vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 .register-secretary .content .column-1 .list {

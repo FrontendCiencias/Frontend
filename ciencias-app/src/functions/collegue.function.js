@@ -8,6 +8,31 @@ export const getCollegue = () => {
     return 'none';
 }
 
+export const grades = () => {
+  if(getCollegue() == "Cimas") {
+    return ["3_4_inicial","5_inicial","1ro_primaria","2do_primaria","3ro_primaria","4to_primaria","5to_primaria","6to_primaria","1ro_secundaria","2do_secundaria","3ro_secundaria","4to_secundaria","5to_secundaria"]
+  }
+  return ["3_inicial","4_inicial","5_inicial","1ro_primaria","2do_primaria","3ro_primaria","4to_primaria","5to_primaria","6to_primaria","1ro_secundaria","2do_secundaria","3ro_secundaria","4to_secundaria","5to_secundaria"]
+}
+
+export const formatMonth = (month) => {
+  const months = {
+    "Enero" : "01",
+    "Febrero" : "02",
+    "Marzo" : "03",
+    "Abril" : "04",
+    "Mayo" : "05",
+    "Junio" : "06",
+    "Julio" : "07",
+    "Agosto" : "08",
+    "Septiembre" : "09",
+    "Octubre" : "10",
+    "Noviembre" : "11",
+    "Diciembre" : "12",
+  }
+  return months[month]
+}
+
 export const formatGrade = (format, grade) => {
   const grades = {
     '3_inicial': {

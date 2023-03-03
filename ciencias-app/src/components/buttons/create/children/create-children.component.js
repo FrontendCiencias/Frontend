@@ -9,7 +9,8 @@ import Input from "../../../input/input.component";
 import { useDispatch, useSelector } from "react-redux";
 import { addStudent } from "../../../../features/register/register.slice";
 import { createStudents } from "../../../../api/secretary.api";
-import { formatCollegue } from "../../../../functions/collegue.function";
+import { formatCollegue, formatMonth, grades } from "../../../../functions/collegue.function";
+import Select from "../../../select/select.component";
 
 export const CreateChildren = (props) => {
   const dispatch = useDispatch();
@@ -28,7 +29,9 @@ export const CreateChildren = (props) => {
     address: "",
     phone: "",
     origin: "",
-    birth: "",
+    birth_day: "",
+    birth_month: "",
+    birth_year: "",
     nationality: "",
     grade: "",
   });
@@ -65,7 +68,9 @@ export const CreateChildren = (props) => {
       address: "",
       phone: "",
       origin: "",
-      birth: "",
+      birth_day: "",
+      birth_month: "",
+      birth_year: "",
       nationality: "",
       grade: "",
     });
@@ -96,7 +101,7 @@ export const CreateChildren = (props) => {
       address: values.address,
       phone: values.phone,
       origin: values.origin,
-      birth: values.birth,
+      birth: `${values.birth_year}-${formatMonth(values.birth_month)}-${values.birth_day}`,
       nationality: values.nationality,
       grade: values.grade,
       collegue: formatCollegue(values.grade, collegue),
@@ -109,7 +114,7 @@ export const CreateChildren = (props) => {
       address: values.address,
       phone: values.phone,
       origin: values.origin,
-      birth: values.birth,
+      birth: `${values.birth_year}-${formatMonth(values.birth_month)}-${values.birth_day}`,
       nationality: values.nationality,
       grade: values.grade,
       collegue: formatCollegue(values.grade, collegue),
@@ -188,19 +193,27 @@ export const CreateChildren = (props) => {
                   />
                 </div>
                 <div className="row">
+                  <div className="input">Fecha de Nacimiento:</div>
                   <Input
                     values={values}
                     setValues={setValues}
                     type="text"
-                    label="Género"
-                    id="genre"
+                    label="Día"
+                    id="birth_day"
+                  />
+                  <Select
+                    values={values}
+                    setValues={setValues}
+                    label="Mes"
+                    id="birth_month"
+                    options={["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]}
                   />
                   <Input
                     values={values}
                     setValues={setValues}
                     type="text"
-                    label="F. Nacimiento"
-                    id="birth"
+                    label="Año"
+                    id="birth_year"
                   />
                 </div>
                 <div className="row">
@@ -211,12 +224,20 @@ export const CreateChildren = (props) => {
                     label="Nacionalidad"
                     id="nationality"
                   />
-                  <Input
+                  <Select
                     values={values}
                     setValues={setValues}
-                    type="text"
+                    type="select"
+                    label="Género"
+                    id="genre"
+                    options={["M","F"]}
+                  />
+                  <Select
+                    values={values}
+                    setValues={setValues}
                     label="Grado"
                     id="grade"
+                    options={grades()}
                   />
                 </div>
                 <div className="row">

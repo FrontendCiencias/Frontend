@@ -10,6 +10,7 @@ import { createParents } from "../../../../api/secretary.api";
 import { getToken } from "../../../../functions/auth.function";
 import { useDispatch } from "react-redux";
 import { addParent } from "../../../../features/register/register.slice";
+import Select from "../../../select/select.component";
 
 export const CreateParents = (props) => {
   const dispatch = useDispatch()
@@ -135,12 +136,13 @@ export const CreateParents = (props) => {
               />
             </div>
             <div className="row">
-              <Input
+              <Select
                 values={values}
                 setValues={setValues}
-                type='text'
-                label='Género'
-                id='genre'
+                type="select"
+                label="Género"
+                id="genre"
+                options={["M","F"]}
               />
               <Input
                 values={values}

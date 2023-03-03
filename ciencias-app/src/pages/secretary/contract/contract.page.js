@@ -15,7 +15,7 @@ const Contract = () => {
     return registerState.parents.map((p, i) => {
       return (
         <div className="line left">
-          <p>{`Yo, ${p.names.name1} ${p.names.name2} ${p.names.surname1} ${p.names.surname2} con DNI: ${p.dni} y celular: ${p.phone}, domiciliado/a en: ${p.address}, ${p.relationship};`}</p>
+          <p>Yo <b>{p.names.name1} {p.names.name2} {p.names.surname1} {p.names.surname2}</b> con DNI: <b>{p.dni}</b> y celular: <b>{p.phone}</b>, domiciliado/a en: <b>{p.address}</b>, <b>{p.relationship}</b></p>
         </div>
       );
     });
@@ -23,18 +23,44 @@ const Contract = () => {
   const listStudents = () => {
     return registerState.students.map((s, i) => {
       return (
-        <div className="line left">
-          <p>
-            {`${s.names.surname1} ${s.names.surname2} ${s.names.name1} ${
-              s.names.name2
-            } cursando: ${formatGrade(0, s.grade)}, con número de celular: ${
-              s.phone
-            }`}
-            , bajo los montos de pago:
-          </p>
-          <p>{`Derecho de Ingreso: ${s.pension[0].admission.total}, Matrícula: ${s.pension[0].tuition.total}, Marzo: ${s.pension[0].march.total}, Abril: ${s.pension[0].april.total}, Mayo: ${s.pension[0].may.total}, Junio: ${s.pension[0].june.total}, Julio: ${s.pension[0].july.total}, Agosto: ${s.pension[0].august.total}, Septiembre: ${s.pension[0].september.total}, Octubre: ${s.pension[0].october.total}, Noviembre: ${s.pension[0].november.total}, Diciembre: ${s.pension[0].december.total}`}</p>
-        </div>
+        // <div className="line left">
+          <tr> 
+            <td className="td-line">
+            <b>{`${s.names.name1} ${
+              s.names.name2} ${s.names.surname1} ${s.names.surname2}`}</b>
+            </td>
+            <td className="td-line"> {`${formatGrade(0, s.grade)}`} </td>
+              <td className="td-line">
+              <tr>
+                <td> <b> D. Ingreso: </b></td><td> {s.pension[0].admission.total} </td>
+                <td> <b> Matricula: </b></td><td>   {s.pension[0].tuition.total} </td>
+                <td> <b> Marzo: </b></td><td>   {s.pension[0].march.total} </td>
+              </tr> 
+              <tr>
+                <td> <b> Abril: </b></td><td>  {s.pension[0].april.total} </td>
+                <td> <b> Mayo: </b></td><td>   {s.pension[0].may.total} </td>
+                <td> <b> Junio: </b></td><td>   {s.pension[0].june.total} </td>
+              </tr> 
+              <tr>
+                <td> <b> Julio: </b></td><td>  {s.pension[0].july.total} </td>
+                <td> <b> Agosto: </b></td><td>   {s.pension[0].august.total} </td>
+                <td> <b> Septiembre: </b></td><td>   {s.pension[0].september.total} </td>
+              </tr> 
+              <tr>
+                <td> <b> Octubre: </b></td><td>  {s.pension[0].october.total} </td>
+                <td> <b> Noviembre: </b></td><td>   {s.pension[0].november.total} </td>
+                <td> <b> Diciembre: </b></td><td>   {s.pension[0].december.total} </td>
+              </tr> 
+              </td>
+          </tr>
       );
+          {/* <p>
+             cursando: <b></b>,
+            ,bajo los montos de pago:
+          </p>
+          <p>{`Derecho de Ingreso: `}<b></b>{`, Matrícula: , Marzo: ${s.pension[0].march.total}, Abril: ${s.pension[0].april.total}, Mayo: ${s.pension[0].may.total}, Junio: ${s.pension[0].june.total}, Julio: ${s.pension[0].july.total}, Agosto: ${s.pension[0].august.total}, Septiembre: ${s.pension[0].september.total}, Octubre: ${s.pension[0].october.total}, Noviembre: ${s.pension[0].november.total}, Diciembre: ${s.pension[0].december.total}`}</p> */}
+          
+        // </div>
     });
   };
 
@@ -46,11 +72,18 @@ const Contract = () => {
           <p>
             {p.names.surname1} {p.names.surname2} {p.names.name1} {p.names.name2}
           </p>
-          <h3>{p.relationship.toUpperCase()} - {p.dni}</h3>
+          <h3>{p.relationship} - {p.dni}</h3>
         </div>
       );
     });
   };
+
+  const address = () => {
+    if (collegueState=="Ciencias") {
+      return "Av. Condesuyos B2 - Frente a la Alameda"
+    }
+    return "Av. Los Colonizadores Parcela 191 -1"
+  }
   return (
     <div className="contract-container">
       <div className="main">
@@ -62,8 +95,7 @@ const Contract = () => {
         <p>
           Conste el presente CONTRATO DE PRESTACIÓN DE SERVICIOS ESCOLARES - AÑO
           2023, que suscriben de una parte la I.E.P. {collegueState} con RUC Nº
-          10068110454, con domicilio en la Av. Los Colonizadores Parcela 191 -1
-          Villa el Pedregal Majes, debidamente representado por su gerente Mg.
+          10068110454, con domicilio en la {address()} - Villa el Pedregal Majes, debidamente representado por su gerente Mg.
           Juan Mesías Arizmendi Ortega con DNI 06811045 a quien en adelante
           denominaremos LA INSTITUCION EDUCATIVA, y de otra parte:
         </p>
@@ -75,7 +107,20 @@ const Contract = () => {
       <div className="line left">
         <h3>De el/la/los alumno/a/os:</h3>
       </div>
+      <table>
+        <thead>
+
+        <tr className="thead-line">
+          <th> Nombres y Apellidos </th>
+          <th> Grado </th>
+          <th> Pagos </th>
+        </tr>
+        </thead>
+       <tbody>
+        {/* <hr style={{background: 'black',color: 'black',borderColor: 'black',height:'0.2vw',width:'80vw'}}/> */}
       {listStudents()}
+       </tbody>
+      </table>
       <div className="line left">
         <h3>Asumimos los siguientes compromisos:</h3>
       </div>

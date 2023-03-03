@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { createContract, getSlots } from "../../../api/secretary.api";
 
+import plus from "../../../svg/plus.svg";
+
 import Brand from "../../../components/brand/brand.component"
 import { ActionButton } from "../../../components/buttons/action/action-button.component";
 import CreateChildren from "../../../components/buttons/create/children/create-children.component";
@@ -13,6 +15,8 @@ import { Slots } from "../../../components/slots/slots.component";
 import { formatGrade, getCollegue } from "../../../functions/collegue.function";
 
 import "./register.style.css"
+import SearchParents from "../../../components/buttons/search/parents/searchParents.component";
+import SearchChildren from "../../../components/buttons/search/children/searchChildren.component";
 
 const RegisterSecretary = () => {
   
@@ -77,7 +81,9 @@ const RegisterSecretary = () => {
         <div className="row-1">
           <div className="column-1">
             <div className="parents">
-              <div className="title">PADRES</div>
+              <div className="title">PADRES
+                <SearchParents/>
+              </div>
               <div className="list">
                 {listParents()}
                 <CreateParents type='plus'/>
@@ -85,7 +91,9 @@ const RegisterSecretary = () => {
               </div>
             </div>
             <div className="children">
-              <div className="title">ALUMNOS</div>
+              <div className="title">ALUMNOS
+                <SearchChildren/>
+              </div>
               <div className="list">
                 {listChildren()}
                 <CreateChildren type='plus'/>

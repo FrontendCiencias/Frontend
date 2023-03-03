@@ -55,8 +55,44 @@ export const createParents = parent => {
     })
 };
 
+export const searchParents = parent => {
+  return fetch(`${API}/tutor/dni`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
+    },
+    mode: 'cors',
+    body: JSON.stringify(parent)
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
 export const createStudents = student => {
   return fetch(`${API}/student/signup`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
+    },
+    mode: 'cors',
+    body: JSON.stringify(student)
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
+export const searchStudents = student => {
+  return fetch(`${API}/student/dni`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
