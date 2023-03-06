@@ -37,8 +37,9 @@ export const SignIn = (props) => {
         setValues({...values, error: d.error, loading: false})
       } else { 
         dispatch(changeUser(d.data))
+        const hora = new Date();
         authenticate(
-          {...d, collegue:collegueState}, () => {
+          {...d, collegue:collegueState, expired: hora}, () => {
             setValues({
               ...values,
               redirect: true
