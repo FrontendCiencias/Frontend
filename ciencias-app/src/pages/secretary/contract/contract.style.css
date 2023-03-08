@@ -1,7 +1,7 @@
 .contract-container {
-  width: calc(100vw - 150px);
-  height: calc(141.428vw - 100px);
-  padding: 50px 75px;
+  width: 85vw;
+  height: 131.428vw;
+  padding: 5vw 7.5vw;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
 
 .contract-container .line {
   width: 100%;
-  margin: 0 0 10px;
+  margin: 0 0 1vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -65,7 +65,8 @@
   width: calc(100vw - 150px);
   display: flex;
   justify-content: space-around;
-  bottom: 10vh;
+  bottom: 8vw;
+  font-size: 1.6vw;
 }
 
 .bold {
@@ -75,11 +76,11 @@
 table {
   border-collapse: collapse;
   margin: 2vw;
-  font-size: 1.5vw;
+  font-size: 1.4vw;
 }
 
 td {
-  padding: 0.3vw 1.2vw; 
+  padding: 0.2vw 1.3vw; 
 }
 
 .td-line {

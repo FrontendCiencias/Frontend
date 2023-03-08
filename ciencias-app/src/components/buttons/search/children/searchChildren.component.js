@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import user_card from "../../../../svg/user-card.svg"
-import plus from "../../../../svg/plus.svg"
+import search from "../../../../svg/search.svg"
 import { ActionButton } from "../../action/action-button.component";
 import Input from "../../../input/input.component";
 import { createParents, searchParents, searchStudents } from "../../../../api/secretary.api";
@@ -94,7 +94,7 @@ export const SearchChildren = (props) => {
       return (
         <a onClick={()=>setShown(true)}>
           <div className={`search-button`}>
-            <img src={plus}/>
+            <img src={search}/>
           </div>
         </a>
       )
