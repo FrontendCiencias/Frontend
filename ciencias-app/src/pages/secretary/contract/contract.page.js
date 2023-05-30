@@ -9,8 +9,7 @@ import { formatGrade } from "../../../functions/collegue.function";
 const Contract = () => {
   const collegueState = useSelector((state) => state.collegue);
   const registerState = JSON.parse(localStorage.getItem("lastContract"));
-  console.log(registerState);
-  console.log(collegueState);
+
   const listParents = () => {
     return registerState.parents.map((p, i) => {
       return (
@@ -54,13 +53,6 @@ const Contract = () => {
               </td>
           </tr>
       );
-          {/* <p>
-             cursando: <b></b>,
-            ,bajo los montos de pago:
-          </p>
-          <p>{`Derecho de Ingreso: `}<b></b>{`, Matrícula: , Marzo: ${s.pension[0].march.total}, Abril: ${s.pension[0].april.total}, Mayo: ${s.pension[0].may.total}, Junio: ${s.pension[0].june.total}, Julio: ${s.pension[0].july.total}, Agosto: ${s.pension[0].august.total}, Septiembre: ${s.pension[0].september.total}, Octubre: ${s.pension[0].october.total}, Noviembre: ${s.pension[0].november.total}, Diciembre: ${s.pension[0].december.total}`}</p> */}
-          
-        // </div>
     });
   };
 
@@ -79,7 +71,7 @@ const Contract = () => {
   };
 
   const address = () => {
-    if (collegueState=="Ciencias") {
+    if (collegueState==="Ciencias") {
       return "Av. Condesuyos B2 - Frente a la Alameda"
     }
     return "Av. Los Colonizadores Parcela 191 -1"

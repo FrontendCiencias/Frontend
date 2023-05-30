@@ -1,0 +1,38 @@
+.createStudent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0;
+  padding-top: 0.5vh;
+}
+
+.createStudent .inputs {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3vw;
+}
+
+.createStudent .buttons {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.createStudent .row {
+  display: flex;
+  height: max-content;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.createStudent .col {
+  display: flex;
+  flex-direction: column;
+  height: 54vh;
+  justify-content: space-between;
+  padding: 0.5vh 2vw;
+}
+
+.createStudent .payments {
+  width: 50%;
+}
