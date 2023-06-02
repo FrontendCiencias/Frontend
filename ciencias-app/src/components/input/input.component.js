@@ -4,7 +4,7 @@ import "./input.style.css"
 
 export const Input = (props) => {
   const { values, setValues, label, id, type } = props
-  console.log(values)
+  // console.log(values)
   return (
     <div className="input form-box">
       <input

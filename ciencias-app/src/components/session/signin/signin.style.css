@@ -7,9 +7,7 @@
   align-items: center;
   justify-content: center;
   right: 0;
-  /* width: calc(10vw + 300px); */
-  height: calc(98vh - 50px);
-  
+  height: calc(97vh - 50px);
   border-radius: 0 10px 10px 0;
   transition: all .5s ease;
   width: 0;

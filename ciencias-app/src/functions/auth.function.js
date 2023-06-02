@@ -1,9 +1,9 @@
 export const isExpirated = () => {
   // console.log(JSON.parse(localStorage.getItem("jwt")).expired);
   if (JSON.parse(localStorage.getItem("jwt")).expired) {
-    console.log(JSON.parse(localStorage.getItem("jwt")).expired);
-    const fecha = new Date();
-    if (JSON.parse(localStorage.getItem("jwt")).expired - fecha > 2 * 60 * 60 * 1000) {
+    const fecha = new Date().getTime();
+    console.log(JSON.parse(localStorage.getItem("jwt")).expired-fecha);
+    if (JSON.parse(localStorage.getItem("jwt")).expired < fecha) {
       localStorage.removeItem("jwt");
       return true;
     }
@@ -15,7 +15,9 @@ export const isExpirated = () => {
 
 export const authenticate = (data, next) => {
   if (typeof window !== "undefined") {
-    localStorage.setItem("jwt", JSON.stringify(data));
+    let now = new Date()
+    let expired = now.getTime() + 1000*60*20
+    localStorage.setItem("jwt", JSON.stringify({...data, expired: expired}));
     next();
   }
 };

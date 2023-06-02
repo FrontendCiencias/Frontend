@@ -37,9 +37,8 @@ export const SignIn = (props) => {
         setValues({...values, error: d.error, loading: false})
       } else { 
         dispatch(changeUser(d.data))
-        const hora = new Date();
         authenticate(
-          {...d, collegue:collegueState, expired: hora}, () => {
+          {...d, collegue:collegueState}, () => {
             setValues({
               ...values,
               redirect: true
@@ -53,11 +52,11 @@ export const SignIn = (props) => {
   const RedirectUser = () => {
     if (redirect) {
       if (user) {
-        return <Navigate replace to='/app/secretary'/>
+        return <Navigate replace to='/app/admin/secretary'/>
       }
     }
     if (user) {
-      return <Navigate replace to='/app/secretary'/>
+      return <Navigate replace to='/app/admin/secretary'/>
     }
   }
 

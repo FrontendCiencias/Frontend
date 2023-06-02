@@ -7,9 +7,9 @@ import "./brand.style.css"
 
 class Brand extends React.Component {
   render() {
-    let { text } = this.props
+    let { text, link } = this.props
     return (
-      <Link to='../app/signin'>
+      <Link to={link}>
         <div className='brand'>
           <img src={logo}/>
           <h3>Colegio {text}</h3>

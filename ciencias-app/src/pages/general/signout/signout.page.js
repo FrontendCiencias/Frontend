@@ -11,7 +11,7 @@ const SignOut = () => {
   dispatch(changeUser({}))
   dispatch(changeCollegue("none"))
   localStorage.removeItem('jwt');
-  return <Navigate replace to='/app/signin'/>
+  return <Navigate replace to='/app'/>
 }
 
 export default SignOut;

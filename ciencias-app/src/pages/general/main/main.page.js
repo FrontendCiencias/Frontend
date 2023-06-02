@@ -1,33 +1,40 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Background } from "../../../components/background/background.component";
 import Brand from "../../../components/brand/brand.component";
 import { ActionButton } from "../../../components/buttons/action/action-button.component";
+import MainButton from "../../../components/buttons/main/main-button.component";
+import { changeCollegue } from "../../../features/collegue/collegue.slice";
 import { getCollegue } from "../../../functions/collegue.function";
 
 import "./main.style.css"
 const Main = () => {
+  const dispatch = useDispatch()
+
+  const [collegue, setCollegues] = useState("none")
+
+  const changeCiencias = () => {
+    dispatch(changeCollegue('Ciencias'))
+    setCollegues("Ciencias")
+  }
+  const changeCimas = () => {
+    dispatch(changeCollegue('Cimas'))
+    setCollegues("Cimas")
+  }
   
   return (
-    <div className="main">
-      <div className="header-main">
-        <Brand text={"Ciencias"}/>
-      </div>
-      <div className="content-main">
-        <div>
-          <h1>Bienvenidos!</h1>
-          <p>Colegios Ciencias y Cimas los mejores de Majes y del Perú jejeje</p>
-          <Link to='./app/signin'>
-            <ActionButton 
-              text='Plataforma Virtual'
-              type='primary'
-            />
-          </Link>
-        </div>
-        <img src="https://assets.website-files.com/5ed844e06d65e05f9f96a85c/5f18ec35111ee1fe272ca21f_CreceSiempre34-min.png"/>
-      </div>
-      <div className="footer-main">
-        <h5>© Colegios Ciencias y Cimas 2023</h5>
-        <h5>Powered by Dyone</h5>
+    <div className="main-container">
+      <div className="secretary-buttons">
+        <Link to='./student/signin'>
+          <MainButton text='Alumno' collegue={collegue}/>
+        </Link>
+        <Link to='./teacher/signin'>
+          <MainButton text='Docente' collegue={collegue}/>
+        </Link>
+        <Link to='./admin'>
+          <MainButton text='Administrativo' collegue={collegue}/>
+        </Link>
       </div>
     </div>
   )

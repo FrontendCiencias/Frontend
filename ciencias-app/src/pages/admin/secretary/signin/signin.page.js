@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import MainButton from "../../../components/buttons/main/main-button.component";
-import SignIn from "../../../components/session/signin/signin.component";
-import { changeCollegue } from "../../../features/collegue/collegue.slice";
+import MainButton from "../../../../components/buttons/main/main-button.component";
+import SignIn from "../../../../components/session/signin/signin.component";
+import { changeCollegue } from "../../../../features/collegue/collegue.slice";
+
 
 import "./signin.style.css"
 

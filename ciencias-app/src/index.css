@@ -19,9 +19,9 @@ body {
 
 .main-container {
   width: calc(98vw - 50px);
-  height: calc(98vh - 50px);
+  height: calc(97vh - 50px);
   position: absolute;
-  top: calc(1vh + 25px);
+  top: calc(1.5vh + 25px);
   left: calc(1vw + 25px);
   display: flex;
   flex-direction: column;

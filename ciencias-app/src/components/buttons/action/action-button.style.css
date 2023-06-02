@@ -1,6 +1,7 @@
 .action-button {
-  width: calc(3vw + 200px);
-  height: 8.5vh;
+  /* width: calc(3vw + 200px);
+  height: 8.5vh; */
+  padding: 2vh 4vw;
   display: flex;
   border-radius: 15px;
   display: flex;
@@ -11,7 +12,7 @@
 }
 
 .action-button h3 {
-  font-size: calc(0.8vw + 10px);
+  font-size: calc(1vw + 10px);
   font-family: 'Cabin';
   font-style: normal;
   font-weight: 600;

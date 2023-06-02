@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import cimas from "../../../svg/cimas.jpg";
-import ciencias from "../../../svg/ciencias.jpg";
+import cimas from "../../../../svg/cimas.jpg";
+import ciencias from "../../../../svg/ciencias.jpg";
 
 import "./contract.style.css";
-import { formatGrade } from "../../../functions/collegue.function";
+import { formatGrade } from "../../../../functions/collegue.function";
 
 const Contract = () => {
   const collegueState = useSelector((state) => state.collegue);
