@@ -21,6 +21,9 @@ const MainAdmin = () => {
         <Link to='./auxiliar/signin'>
           <MainButton text='Auxiliar' collegue={collegueState}/>
         </Link>
+        <Link to='./supervisor/signin'>
+          <MainButton text='Supervisor' collegue={collegueState}/>
+        </Link>
       </div>
     </div>
   )

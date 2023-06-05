@@ -11,5 +11,5 @@ export const AppRoute = ({children}) => {
 }
 
 export const SecretaryRoute = ({children}) => {
-  return isAuthenticated() ? <AppRoute>{children}</AppRoute> : <Navigate to="/app/signin" />;
+  return isAuthenticated() ? <AppRoute>{children}</AppRoute> : <Navigate to="/app/admin/secretary/signin" />;
 }

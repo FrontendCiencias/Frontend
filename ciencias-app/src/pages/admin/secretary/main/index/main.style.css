@@ -1,7 +1,7 @@
 .main-container .header {
-  width: 100%;
-  height: 14%;
-  margin-bottom: 1%;
+  width: calc(98vw - 50px);
+  height: 13vh;
+  margin-bottom: 1vh;
   display: flex;
   justify-content: space-between;
 
@@ -9,9 +9,9 @@
 }
 
 .main-container .content {
-  width: 85%;
-  height: 75%;
-  margin-bottom: 2%;
+  width: calc(85vw - 50px);
+  height: 70vh;
+  margin-bottom: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;

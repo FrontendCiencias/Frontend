@@ -5,6 +5,7 @@ export const isExpirated = () => {
     console.log(JSON.parse(localStorage.getItem("jwt")).expired-fecha);
     if (JSON.parse(localStorage.getItem("jwt")).expired < fecha) {
       localStorage.removeItem("jwt");
+      alert("Sesión expirada, ingresa tus datos de nuevo.")
       return true;
     }
     return false;
@@ -16,7 +17,7 @@ export const isExpirated = () => {
 export const authenticate = (data, next) => {
   if (typeof window !== "undefined") {
     let now = new Date()
-    let expired = now.getTime() + 1000*60*20
+    let expired = now.getTime() + 1000*60*40
     localStorage.setItem("jwt", JSON.stringify({...data, expired: expired}));
     next();
   }

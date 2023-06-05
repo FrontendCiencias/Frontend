@@ -109,6 +109,24 @@ export const searchStudents = student => {
     })
 };
 
+export const searchAllStudents = () => {
+  return fetch(`${API}/student`, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
+    },
+    mode: 'cors',
+  })
+    .then(response => {
+      console.log("hola")
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
 export const createContract = obj => {
   return fetch(`${API}/contract/signup`, {
     method: "post",
