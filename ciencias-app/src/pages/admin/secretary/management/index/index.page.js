@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import Brand from "../../../../../../components/brand/brand.component";
-import MainButton from "../../../../../../components/buttons/main/main-button.component";
-import Profile from "../../../../../../components/session/profile/profile.component";
+import Brand from "../../../../../components/brand/brand.component";
+import MainButton from "../../../../../components/buttons/main/main-button.component";
+import Profile from "../../../../../components/session/profile/profile.component";
 
 const IndexManagement = () => {
   const collegueState = useSelector(state => state.collegue)

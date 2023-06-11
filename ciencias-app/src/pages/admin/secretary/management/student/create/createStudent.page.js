@@ -1,24 +1,20 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
-import { createContract, createStudents, getSlots } from "../../../../../../../api/secretary.api";
+import { createContract, createStudents, getSlots } from "../../../../../../api/secretary.api";
 
-import Brand from "../../../../../../../components/brand/brand.component";
-import { ActionButton } from "../../../../../../../components/buttons/action/action-button.component";
-import CreateChildren from "../../../../../../../components/buttons/create/children/create-children.component";
-import CreateParents from "../../../../../../../components/buttons/create/parents/create-parents.component";
-import Profile from "../../../../../../../components/session/profile/profile.component";
-import { ListSlots } from "../../../../../../../components/slots/list-slots.component";
+import Brand from "../../../../../../components/brand/brand.component";
+import { ActionButton } from "../../../../../../components/buttons/action/action-button.component";
+import Profile from "../../../../../../components/session/profile/profile.component";
 import {
   formatCollegue,
   formatGrade,
   formatMonth,
   getCollegue,
   grades,
-} from "../../../../../../../functions/collegue.function";
-import { addStudent } from "../../../../../../../features/register/register.slice";
-import Input from "../../../../../../../components/input/input.component";
-import Select from "../../../../../../../components/select/select.component";
+} from "../../../../../../functions/collegue.function";
+import Input from "../../../../../../components/input/input.component";
+import Select from "../../../../../../components/select/select.component";
 
 import "./createStudent.style.css"
 

@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { searchAllStudents } from "../../../../../../api/secretary.api.js";
+import { searchAllStudents } from "../../../../../api/secretary.api.js";
 
-import Brand from "../../../../../../components/brand/brand.component";
-import MainButton from "../../../../../../components/buttons/main/main-button.component";
-import Profile from "../../../../../../components/session/profile/profile.component";
+import Brand from "../../../../../components/brand/brand.component";
+import MainButton from "../../../../../components/buttons/main/main-button.component";
+import Profile from "../../../../../components/session/profile/profile.component";
 
 const Pay = () => {
   const collegueState = useSelector((state) => state.collegue);

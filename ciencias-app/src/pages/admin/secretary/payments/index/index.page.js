@@ -6,36 +6,30 @@ import Brand from "../../../../../components/brand/brand.component";
 import MainButton from "../../../../../components/buttons/main/main-button.component";
 import Profile from "../../../../../components/session/profile/profile.component";
 
-import "./main.style.css"
-
-const MainSecretary = () => {
+const IndexPayments = () => {
   const collegueState = useSelector(state => state.collegue)
   return (
-    <div className="main-container main-secretary">
+    <div className="main-container">
       <div className="header">
         <Brand text={collegueState} link="/app/admin/secretary/signin"/>
       </div>
       <div className="content">
-        <Link to='./payments'>
+        <Link to='./pay'>
           <MainButton
-            text='Pagos'
+            text='Realizar pago'
             collegue={collegueState}
           />
         </Link>
-        <Link to='./management'>
+        <Link to='./view'>
           <MainButton
-            text='Gestion'
+            text='Ver pagos'
             collegue={collegueState}
           />
         </Link>
-        <MainButton
-          text='Horarios'
-          collegue={collegueState}
-        />
       </div>
       <Profile/>
     </div>
   )
 }
 
-export default MainSecretary;
+export default IndexPayments;

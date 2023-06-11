@@ -2,27 +2,29 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Brand from "../../../../../../components/brand/brand.component";
-import MainButton from "../../../../../../components/buttons/main/main-button.component";
-import Profile from "../../../../../../components/session/profile/profile.component";
+import Brand from "../../../../components/brand/brand.component";
+import MainButton from "../../../../components/buttons/main/main-button.component";
+import Profile from "../../../../components/session/profile/profile.component";
 
-const IndexPayments = () => {
+import "./main.style.css"
+
+const MainSecretary = () => {
   const collegueState = useSelector(state => state.collegue)
   return (
-    <div className="main-container">
+    <div className="main-container main-secretary">
       <div className="header">
         <Brand text={collegueState} link="/app/admin/secretary/signin"/>
       </div>
       <div className="content">
-        <Link to='./pay'>
+        <Link to='./payments'>
           <MainButton
-            text='Realizar pago'
+            text='Pagos'
             collegue={collegueState}
           />
         </Link>
-        <Link to='./view'>
+        <Link to='./management'>
           <MainButton
-            text='Ver pagos'
+            text='Gestion'
             collegue={collegueState}
           />
         </Link>
@@ -32,4 +34,4 @@ const IndexPayments = () => {
   )
 }
 
-export default IndexPayments;
+export default MainSecretary;

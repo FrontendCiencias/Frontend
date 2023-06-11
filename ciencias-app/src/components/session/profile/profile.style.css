@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 35px calc(25px + 2vw);
+  margin: 50px calc(25px + 2vw);
   font-size: 20px;
 }
 
@@ -80,7 +80,7 @@
 
 .signout {
   position: relative;
-  left: calc(5vw + 30px);
+  left: calc(8vw + 30px);
   top: 30vh;
   border-radius: 5px;
   /* padding: 1vh 2vh; */
