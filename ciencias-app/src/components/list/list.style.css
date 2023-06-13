@@ -1,0 +1,15 @@
+.items .surnames {
+  padding: 0.2vh 1.5vw;
+}
+.items .names {
+  padding: 0.2vh 1.5vw;
+}
+.items .action {
+  padding: 0.2vh 1.5vw;
+}
+.items .title {
+  padding: 0.5vh 0vw;
+}
+.items .title h4 {
+  font-size: calc(1vw + 10px);
+}

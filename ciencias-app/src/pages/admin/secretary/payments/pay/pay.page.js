@@ -2,17 +2,29 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { searchAllStudents } from "../../../../../api/secretary.api.js";
+import { getSlots, searchAllStudents } from "../../../../../api/secretary.api.js";
 
 import Brand from "../../../../../components/brand/brand.component";
 import MainButton from "../../../../../components/buttons/main/main-button.component";
 import Profile from "../../../../../components/session/profile/profile.component";
+import { List } from "../../../../../components/list/list.component.js";
+import { getCollegue, grades } from "../../../../../functions/collegue.function.js";
 
 const Pay = () => {
-  const collegueState = useSelector((state) => state.collegue);
   const studentsState = useSelector((state) => state.students);
 
   const [search, setSearch] = useState([]);
+
+  const collegueState = getCollegue()
+  const registerState = useSelector(state => state.register)
+
+  
+  useEffect(() => {
+    searchAllStudents().then(d => {
+      setSearch(d)
+      console.log(d)
+    })
+  }, [])
 
   const listStudents = () => {
     return studentsState
@@ -29,7 +41,7 @@ const Pay = () => {
           console.log(search)
           console.log(studentsState)
         }} />
-        <p>{listStudents()}</p>
+        <List categories={grades()} items={search} action="Nuevo Pago" href="/app/admin/secretary/payments/pay/pension"/>
       </div>
       <Profile />
     </div>

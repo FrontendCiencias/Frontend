@@ -28,7 +28,7 @@ const Router = () => {
         <Route path = "/app/admin/secretary/management" exact element = {<SecretaryRoute><IndexManagement/></SecretaryRoute>} />
         <Route path = "/app/admin/secretary/management/student" exact element = { <SecretaryRoute><CreateStudent/></SecretaryRoute> } />
         <Route path = "/app/admin/secretary/payments" exact element = { <SecretaryRoute><IndexPayments/></SecretaryRoute> } />
-        {/* <Route path = "/app/admin/secretary/payments/pay" exact element = { <SecretaryRoute><Pay/></SecretaryRoute> } /> */}
+        <Route path = "/app/admin/secretary/payments/pay" exact element = { <SecretaryRoute><Pay/></SecretaryRoute> } />
         {/* <Route path = "/app/admin/secretary/register/contract" exact element = { <SecretaryRoute><CreateContract/></SecretaryRoute> } />
         <Route path = "/app/admin/secretary/register/contract/lastcontract" exact element = { <SecretaryRoute><Contract/></SecretaryRoute> } /> */}
         <Route path = "/test" exact element = { <Test/> } />

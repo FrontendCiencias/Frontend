@@ -6,9 +6,10 @@ import "./action-button.style.css"
 
 export const ActionButton = (props) => {
   const collegue = useSelector(state => state.collegue)
-  let { text, type } = props
+  let { text, type, size } = props
   let classname = ""
   type=="primary" ? classname = `action-button ${type} heavy-${collegue}-color` : classname = `action-button ${type}`
+  size == "small" ? classname = classname + " small" : classname = classname + " normal"
   return (
     <div>
       <div className={classname}>
