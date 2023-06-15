@@ -9,6 +9,7 @@ import MainButton from "../../../../../components/buttons/main/main-button.compo
 import Profile from "../../../../../components/session/profile/profile.component";
 import { List } from "../../../../../components/list/list.component.js";
 import { getCollegue, grades } from "../../../../../functions/collegue.function.js";
+import { SearchList } from "../../../../../components/list/searchlist.component.js";
 
 const Pay = () => {
   const studentsState = useSelector((state) => state.students);
@@ -36,12 +37,7 @@ const Pay = () => {
         <Brand text={collegueState} link="/app/admin/secretary/signin" />
       </div>
       <div className="content">
-        <input type="text" placeholder="Search" onChange={(e) => {
-          setSearch(e.target.value)
-          console.log(search)
-          console.log(studentsState)
-        }} />
-        <List categories={grades()} items={search} action="Nuevo Pago" href="/app/admin/secretary/payments/pay/pension"/>
+        <SearchList action="Nuevo Pago"/>
       </div>
       <Profile />
     </div>

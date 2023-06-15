@@ -14,6 +14,7 @@ import CreateStudent from "../pages/admin/secretary/management/student/create/cr
 import NotFound from "../pages/general/notfound/notfound.page.js";
 import IndexPayments from "../pages/admin/secretary/payments/index/index.page.js";
 import Pay from "../pages/admin/secretary/payments/pay/pay.page.js";
+import IndexStudentManagement from "../pages/admin/secretary/management/student/index/index.page.js";
 
 const Router = () => {
   return (
@@ -26,7 +27,8 @@ const Router = () => {
         <Route path = "/app/admin/secretary/signin" exact element = { <AppRoute><SignInSecretary/></AppRoute>} />
         <Route path = "/app/admin/secretary" exact element = {<SecretaryRoute><MainSecretary/></SecretaryRoute>} />
         <Route path = "/app/admin/secretary/management" exact element = {<SecretaryRoute><IndexManagement/></SecretaryRoute>} />
-        <Route path = "/app/admin/secretary/management/student" exact element = { <SecretaryRoute><CreateStudent/></SecretaryRoute> } />
+        <Route path = "/app/admin/secretary/management/student" exact element = { <SecretaryRoute><IndexStudentManagement/></SecretaryRoute> } />
+        <Route path = "/app/admin/secretary/management/student/create" exact element = { <SecretaryRoute><CreateStudent/></SecretaryRoute> } />
         <Route path = "/app/admin/secretary/payments" exact element = { <SecretaryRoute><IndexPayments/></SecretaryRoute> } />
         <Route path = "/app/admin/secretary/payments/pay" exact element = { <SecretaryRoute><Pay/></SecretaryRoute> } />
         {/* <Route path = "/app/admin/secretary/register/contract" exact element = { <SecretaryRoute><CreateContract/></SecretaryRoute> } />
