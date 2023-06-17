@@ -389,7 +389,10 @@ const CreateStudent = () => {
             </div>
           </div>
         </div>
+        <div className="row">
+          {showLoading()}
           {showError()}
+        </div>
         <div className="row buttons">
           <a onClick={cancel}>
             <ActionButton text="Cancelar" type="secondary" />
@@ -397,9 +400,6 @@ const CreateStudent = () => {
           <a onClick={clickSubmit}>
             <ActionButton text="Registrar" type="primary" />
           </a>
-        </div>
-        <div className="row">
-          {showLoading()}
         </div>
       </div>
       <Profile />

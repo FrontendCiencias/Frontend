@@ -1,16 +1,15 @@
 .main-container .header {
   width: calc(98vw - 50px);
-  height: 13vh;
+  height: 16vh;
   margin-bottom: 1vh;
   display: flex;
   justify-content: space-between;
-
   /* border-style: solid; */
 }
 
 .main-container .content {
   width: calc(85vw - 50px);
-  height: 70vh;
+  height: calc(75vh - 50px);
   margin-bottom: 5vh;
   display: flex;
   flex-direction: column;

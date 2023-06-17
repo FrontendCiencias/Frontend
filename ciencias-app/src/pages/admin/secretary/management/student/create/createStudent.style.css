@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-evenly;
   margin: 0;
-  padding-top: 0.5vh;
+  /* padding-top: 0.5vh; */
 }
 
 .createStudent .inputs {
@@ -28,7 +28,7 @@
 .createStudent .col {
   display: flex;
   flex-direction: column;
-  height: 54vh;
+  height: 50vh;
   justify-content: space-between;
   padding: 0.5vh 2vw;
 }

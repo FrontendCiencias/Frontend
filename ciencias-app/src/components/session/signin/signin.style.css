@@ -45,7 +45,7 @@
 }
 
 .error {
-  /* margin-top: 2vh; */
+  margin-top: 1vh;
   margin-bottom: 1vh;
   color: red;
 }
