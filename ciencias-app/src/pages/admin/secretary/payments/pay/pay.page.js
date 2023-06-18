@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import "./pay.style.css"
+
 import { getSlots, searchAllStudents } from "../../../../../api/secretary.api.js";
 
 import Brand from "../../../../../components/brand/brand.component";
@@ -37,7 +39,7 @@ const Pay = () => {
         <Brand text={collegueState} link="/app/admin/secretary/signin" />
       </div>
       <div className="content">
-        <SearchList action="Nuevo Pago"/>
+        <SearchList action="Nuevo Pago" link="/app/admin/secretary/payments/pay/pension"/>
       </div>
       <Profile />
     </div>

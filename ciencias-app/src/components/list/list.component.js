@@ -4,7 +4,6 @@ import './list.style.css'
 
 
 export const List = (props) => {
-  
   const categoryList = () => {
     const {categories, items} = props;
     if (categories && items) {
