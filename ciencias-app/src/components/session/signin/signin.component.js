@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { signin } from "../../../api/secretary.api";
-import { authenticate, isAuthenticated } from "../../../functions/auth.function";
+import { secretarysignin } from "../../../api/secretary.api";
+import { authenticate, getRol, isAuthenticated } from "../../../functions/auth.function";
 
 import { ActionButton } from "../../buttons/action/action-button.component";
 import Input from "../../input/input.component";
 
 import "./signin.style.css"
 import { changeUser } from "../../../features/auth/auth.slice";
+import { auxiliarsignin } from "../../../api/auxiliar.api";
 
 export const SignIn = (props) => {
 
@@ -22,41 +23,75 @@ export const SignIn = (props) => {
     password: '',
     error: '',
     loading: false,
-    redirect: false
+    redirect: false,
+    submit: false
   })
 
   const {email, password, error, loading, redirect} = values
   const user = isAuthenticated()
+  let rol = ""
+  if (user) {
+    rol = getRol() 
+  } else {
+    rol = props.rol
+  }
 
   const clickSubmit = (event) => {
     event.preventDefault()
     setValues({...values, error: false, loading: true})
-    signin({email, password})
-    .then(d => {
-      if (d.error) {
-        setValues({...values, error: d.error, loading: false})
-      } else { 
-        dispatch(changeUser(d.data))
-        authenticate(
-          {...d, collegue:collegueState}, () => {
-            setValues({
-              ...values,
-              redirect: true
-            })
-          }
-        )
-      }
-    })
+    console.log(values)
+    if (rol == 'secretary') {
+      console.log({email, password})
+      secretarysignin({email, password})
+      .then(d => {
+        if (d.error) {
+          setValues({...values, error: d.error, loading: false})
+        } else { 
+          dispatch(changeUser(d.data))
+          authenticate(
+            {...d, collegue:collegueState, rol:rol}, () => {
+              setValues({
+                ...values,
+                redirect: true
+              })
+            }
+          )
+        }
+      })
+    }
+    if (rol == 'auxiliar') {
+      console.log(email)
+      auxiliarsignin({email, password})
+      .then(d => {
+        console.log(d)
+        if (d.error) {
+          setValues({...values, error: d.error, loading: false})
+        } else { 
+          dispatch(changeUser(d.data))
+          authenticate(
+            {...d, collegue:collegueState, rol:rol}, () => {
+              setValues({
+                ...values,
+                redirect: true
+              })
+            }
+          )
+        }
+      })
+    }
   }
 
   const RedirectUser = () => {
-    if (redirect) {
-      if (user) {
-        return <Navigate replace to='/app/admin/secretary'/>
-      }
+    const linkbyrol = {
+      'secretary': '/app/admin/secretary',
+      'auxiliar': '/app/admin/auxiliar',
+      'supervision': '/app/admin/supervision',
+      'secretary': '/app/admin/secretary',
+      'secretary': '/app/admin/secretary',
     }
-    if (user) {
-      return <Navigate replace to='/app/admin/secretary'/>
+    if ((redirect&&user)|| user) {
+      console.log("Redirigiendo a: ", linkbyrol[rol])
+      return <Navigate replace to={linkbyrol[rol]}/>
     }
   }
 
@@ -79,7 +114,7 @@ export const SignIn = (props) => {
       {RedirectUser()}
       <h2>Hola!</h2>
       <p>Ingresa a tu cuenta</p>
-      <form className="form-signin">
+      <form className="form-signin" onSubmit={clickSubmit}>
         <div className="inputs">
           <Input
             values={values}
@@ -97,13 +132,18 @@ export const SignIn = (props) => {
           />
         </div>
         <div className="button-submit">
-          <a onClick={clickSubmit}>
+          {/* <a onClick={clickSubmit}>
             <ActionButton
               type='primary'
               text='Ingresar'
               collegue={collegueState}
             />
-          </a>
+          </a> */}
+          <ActionButton
+            type='primary'
+            text='Ingresar'
+            collegue={collegueState}
+          />
         </div>
       </form>
       {showError()}

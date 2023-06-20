@@ -6,9 +6,9 @@ import SignIn from "../../../../components/session/signin/signin.component";
 import { changeCollegue } from "../../../../features/collegue/collegue.slice";
 
 
-import "./signin.style.css"
+// import "./signin.style.css"
 
-const SignInSecretary = () => {
+const SignInAuxiliar = () => {
   const dispatch = useDispatch()
 
   const [collegue, setCollegues] = useState("none")
@@ -35,7 +35,7 @@ const SignInSecretary = () => {
                 <MainButton text='Colegio Cimas' selected={false} collegue={collegue}/>
               </a>
             </div>
-            <SignIn shown='signin-shown'/>
+            <SignIn shown='signin-shown' rol='auxiliar'/>
           </div>
         )
         break;
@@ -51,7 +51,7 @@ const SignInSecretary = () => {
                 <MainButton text='Colegio Cimas' selected={true} collegue={collegue}/>
               </a>
             </div>
-            <SignIn shown='signin-shown'/>
+            <SignIn shown='signin-shown' rol='auxiliar'/>
           </div>
         )
         break;
@@ -67,7 +67,7 @@ const SignInSecretary = () => {
                 <MainButton text='Colegio Cimas' selected={false} collegue={collegue}/>
               </a>
             </div>
-            <SignIn shown='signin-notshown'/>
+            <SignIn shown='signin-notshown' rol='auxiliar'/>
           </div>
         )
         break;
@@ -81,4 +81,4 @@ const SignInSecretary = () => {
   )
 }
 
-export default SignInSecretary;
+export default SignInAuxiliar;

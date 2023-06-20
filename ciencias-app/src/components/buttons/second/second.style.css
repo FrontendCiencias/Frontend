@@ -1,0 +1,25 @@
+.second {
+  height: 15vh;
+  margin-left: 7vw;
+  display: flex;
+  border-radius: 10px;
+  background-color: white;
+  transition: width 0.7s, height 0.7s, transform 0.25s;
+  cursor: pointer;
+}
+
+.second:hover {
+  transform: scale(1.05);
+}
+
+.second .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second h3 {
+  font-size: 3vw;
+  transition: font-size 1s;
+  padding: 10px 50px;
+}

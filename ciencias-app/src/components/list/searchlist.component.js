@@ -31,7 +31,7 @@ export const SearchList = (props) => {
     return studentsState.filter(e => (e.names.name1 + " " + e.names.name2 + " " + e.names.surname1 + " " + e.names.surname2).toLowerCase().includes(key))
   }
   return (
-    <div className="container">
+    <div className="v-container">
       <input type="text" placeholder="Search" onChange={(e) => {
           setSearch(e.target.value)
           setList(filter(e.target.value))

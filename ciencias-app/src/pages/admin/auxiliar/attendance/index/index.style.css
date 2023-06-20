@@ -1,0 +1,10 @@
+.attendance-title {
+  border-bottom: solid 2px;
+  width: 90%;
+}
+
+.attendance-title h1{
+  font-size: 5vh;
+  padding-left: 1vw;
+  width: 100%;
+}

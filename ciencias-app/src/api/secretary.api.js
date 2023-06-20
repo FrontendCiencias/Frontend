@@ -2,7 +2,7 @@ import { getToken } from "../functions/auth.function";
 
 const API = "https://backend-ts.vercel.app/api"
 
-export const signin = user => {
+export const secretarysignin = user => {
   return fetch(`${API}/auth/secretary/signin`, {
     method: "post",
     headers: {

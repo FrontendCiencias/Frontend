@@ -4,16 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 import "./pay.style.css"
 
-import { getSlots, searchAllStudents } from "../../../../../api/secretary.api.js";
+import { getSlots, searchAllStudents } from "../../../../../../api/secretary.api.js";
 
-import Brand from "../../../../../components/brand/brand.component";
-import MainButton from "../../../../../components/buttons/main/main-button.component";
-import Profile from "../../../../../components/session/profile/profile.component";
-import { List } from "../../../../../components/list/list.component.js";
-import { getCollegue, grades } from "../../../../../functions/collegue.function.js";
-import { SearchList } from "../../../../../components/list/searchlist.component.js";
+import Brand from "../../../../../../components/brand/brand.component";
+import MainButton from "../../../../../../components/buttons/main/main-button.component";
+import Profile from "../../../../../../components/session/profile/profile.component";
+import { List } from "../../../../../../components/list/list.component.js";
+import { getCollegue, grades } from "../../../../../../functions/collegue.function.js";
+import { SearchList } from "../../../../../../components/list/searchlist.component.js";
 
-const Pay = () => {
+const PayPension = () => {
   const studentsState = useSelector((state) => state.students);
 
   const [search, setSearch] = useState([]);
@@ -47,4 +47,4 @@ const Pay = () => {
 };
 
 
-export default Pay;
+export default PayPension;

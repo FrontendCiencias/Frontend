@@ -8,7 +8,7 @@
 .input input {
   width: calc(100% - 5px);
   padding: 1vh 0px 5px 5px;
-  font-size: 2.5vh;
+  font-size: calc(1vh + 10px);
   color: rgb(0, 0, 0);
   /* margin-bottom: 10px; */
   border: none;

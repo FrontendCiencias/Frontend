@@ -35,7 +35,7 @@ const SignInSecretary = () => {
                 <MainButton text='Colegio Cimas' selected={false} collegue={collegue}/>
               </a>
             </div>
-            <SignIn shown='signin-shown'/>
+            <SignIn shown='signin-shown' rol='secretary'/>
           </div>
         )
         break;
@@ -51,7 +51,7 @@ const SignInSecretary = () => {
                 <MainButton text='Colegio Cimas' selected={true} collegue={collegue}/>
               </a>
             </div>
-            <SignIn shown='signin-shown'/>
+            <SignIn shown='signin-shown' rol='secretary'/>
           </div>
         )
         break;
@@ -67,7 +67,7 @@ const SignInSecretary = () => {
                 <MainButton text='Colegio Cimas' selected={false} collegue={collegue}/>
               </a>
             </div>
-            <SignIn shown='signin-notshown'/>
+            <SignIn shown='signin-notshown' rol='secretary'/>
           </div>
         )
         break;

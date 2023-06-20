@@ -8,6 +8,7 @@ import "./brand.style.css"
 class Brand extends React.Component {
   render() {
     let { text, link } = this.props
+    if (text = "none") text = "Ciencias"
     return (
       <Link to={link}>
         <div className='brand'>

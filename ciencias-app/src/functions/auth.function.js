@@ -36,10 +36,35 @@ export const isAuthenticated = () => {
   return false;
 };
 
+export const isSecretary = () => {
+  if (typeof window == "undefined") {
+    return false;
+  }
+  if (localStorage.getItem("jwt") && (JSON.parse(localStorage.getItem("jwt")).token !== "") && (JSON.parse(localStorage.getItem("jwt")).rol == "secretary")) {
+    if (!isExpirated()) {
+      return true;
+    }
+    return false;
+  }
+  return false;
+};
+
+export const isAuxiliar = () => {
+  if (typeof window == "undefined") {
+    return false;
+  }
+  if (localStorage.getItem("jwt") && (JSON.parse(localStorage.getItem("jwt")).token !== "") && (JSON.parse(localStorage.getItem("jwt")).rol == "auxiliar")) {
+    if (!isExpirated()) {
+      return true;
+    }
+    return false;
+  }
+  return false;
+};
+
 export const getUser = () => {
   if (localStorage.getItem("jwt")) {
     if (JSON.parse(localStorage.getItem("jwt")).token !== "") {
-      console.log(JSON.parse(localStorage.getItem("jwt")));
       return JSON.parse(localStorage.getItem("jwt")).data;
     }
     return {};
@@ -56,4 +81,15 @@ export const getToken = () => {
     return {};
   }
   return {};
+};
+
+
+export const getRol = () => {
+  if (localStorage.getItem("jwt")) {
+    if (JSON.parse(localStorage.getItem("jwt")).token !== "") {
+      return JSON.parse(localStorage.getItem("jwt")).rol;
+    }
+    return "Invitado";
+  }
+  return "Invitado";
 };

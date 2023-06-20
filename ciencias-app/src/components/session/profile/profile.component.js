@@ -7,11 +7,15 @@ import back from '../../../svg/back.svg'
 
 import "./profile.style.css"
 import { ActionButton } from "../../buttons/action/action-button.component";
+import { getRol } from "../../../functions/auth.function";
 
 export const Profile = () => {
   const [shown, setShown] = useState(false)
   const authState = useSelector(state => state.auth)
   const collegueState = useSelector(state => state.collegue)
+
+  const rol = getRol()
+
   if (shown) {
     return (
       <div className="profile-shown">
@@ -38,7 +42,7 @@ export const Profile = () => {
               </div>
               
             </Link>
-            <h5>Secretaría del Colegio {collegueState}</h5>
+            <h5>{rol[0].toUpperCase()+rol.slice(1)} del Colegio {collegueState}</h5>
           </div>
         </div>
       </div>
@@ -48,7 +52,7 @@ export const Profile = () => {
       <div className="profile-notshown">
         <div className="data">
           <div>
-            <h4>Secretaría</h4>
+            <h4>{rol[0].toUpperCase()+rol.slice(1)}</h4>
           </div>
           <a onClick={()=>setShown(true)}>
             <img src={user}/>

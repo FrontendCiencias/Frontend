@@ -1,3 +1,7 @@
+button {
+  cursor: pointer;
+}
+
 .action-button {
   /* width: calc(3vw + 200px);
   height: 8.5vh; */
