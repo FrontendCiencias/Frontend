@@ -1,0 +1,26 @@
+
+.card-student {
+    display: flex;
+}
+
+.card-student .left {
+    width: 9vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-student .right {
+    width: 35vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-student img {
+    width: 5vw;
+    margin-left: -0.5vw;
+}

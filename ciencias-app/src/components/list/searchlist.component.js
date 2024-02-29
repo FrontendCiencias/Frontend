@@ -9,7 +9,7 @@ import './list.style.css'
 
 
 export const SearchList = (props) => {
-  const { action, link } = props
+  const { action } = props
   
   const [search, setSearch] = useState([]);
   const [list, setList] = useState([]);
@@ -38,7 +38,7 @@ export const SearchList = (props) => {
           console.log(search)
         }} />
       <div className="scroll">
-        <List categories={grades()} items={list} action={action} href={link}/>
+        <List categories={grades()} items={list} action={action}/>
       </div>
     </div>
   )

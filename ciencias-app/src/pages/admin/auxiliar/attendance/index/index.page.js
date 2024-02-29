@@ -26,6 +26,7 @@ const IndexAttendance = () => {
         console.log(d.error)
       } else {
         setAttendanceN(d)
+        console.log(d)
       }
     })
     // sad().then(d => {

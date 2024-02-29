@@ -7,25 +7,25 @@
   /* padding-top: 0.5vh; */
 }
 
-.createStudent .inputs {
+.inputs {
   display: flex;
   justify-content: space-between;
   padding: 0 3vw;
 }
 
-.createStudent .buttons {
+.buttons {
   padding-top: 1vh;
   padding-bottom: 1vh;
 }
 
-.createStudent .row {
+.row {
   display: flex;
   height: max-content;
   width: 100%;
   justify-content: space-evenly;
 }
 
-.createStudent .col {
+.col {
   display: flex;
   flex-direction: column;
   height: 50vh;

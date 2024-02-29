@@ -16,7 +16,7 @@ export const Input = (props) => {
             setValues({ ...values, [id]: event.target.value })
           }
         }}
-        value={values.id} id={id} type={type} required />
+        value={values[id]} id={id} type={type} required />
       <label>{label}</label>
     </div>
   )
@@ -25,6 +25,7 @@ export const Input = (props) => {
   return (
     <div className="input form-box">
       <input
+        autoFocus
         onChange={(event) => {
           console.log(values)
           if (event.key == 'Enter') {
@@ -33,7 +34,7 @@ export const Input = (props) => {
             setValues({ ...values, [id]: event.target.value })
           }
         }}
-        value={values.id} id={id} type={type} required />
+        value={values[id]} id={id} type={type} required />
       <label>{label}</label>
     </div>
   )

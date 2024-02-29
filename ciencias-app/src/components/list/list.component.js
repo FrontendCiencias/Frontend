@@ -29,7 +29,7 @@ export const List = (props) => {
             }
           } else {
             return (
-              <Item k={m.names.name1+m.names.surname1+j} surnames={m.names.surname1 + " " + m.names.surname2} names={m.names.name1 + " " + m.names.name2} action={props.action || "none"} href={props.href || "none"}/>
+              <Item k={m.names.name1+m.names.surname1+j} surnames={m.names.surname1 + " " + m.names.surname2} names={m.names.name1 + " " + m.names.name2} action={props.action || "none"} href={"/app/admin/secretary/management/student/edit/"+m.dni}/>
             )
           }
         })

@@ -15,7 +15,7 @@ const IndexStudentManagement = () => {
         <Brand text={collegueState} link="/app/admin/secretary"/>
       </div>
       <div className="content">
-        <SearchList action="Editar" link="/app/admin/secretary/management/student/edit"/>
+        <SearchList action="Editar"/>
         <Link to="./create">
           <ActionButton text="Nuevo Alumno" type="primary"/>
         </Link>

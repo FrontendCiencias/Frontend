@@ -6,6 +6,7 @@ import Profile from "../../components/session/profile/profile.component";
 import { authenticate } from "../../functions/auth.function";
 
 import './test.style.css'
+import CardStudent from "../../components/cards/student";
 
 const Test = () => {
   const assistantState = useSelector(state => state.assistant)
@@ -29,16 +30,14 @@ const Test = () => {
 
   return (
     <div className="main-container">
-      <div className="test-container">
-        {/* <Input
-          type='text'
-          id='nombre'
-          label='Primer Nombre'
-        /> */}
-        <p>{data.email}</p>
-        <p>{data.address}</p>
-        {/* <Profile name={data.name} surname={data.surname} email={data.email}/> */}
-      </div>
+      <CardStudent
+        url="https://e7.pngegg.com/pngimages/867/212/png-clipart-tweety-bird-thumbnail.png"
+        name1="José"
+        name2="Roberto Carlos"
+        surname1="Rodriguez"
+        surname2="De la Torreja"
+        grade="Primero de Cuarto"
+      />
     </div>
   );
 }

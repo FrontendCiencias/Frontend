@@ -93,6 +93,8 @@ const CreateStudent = () => {
       october: "",
       november: "",
       december: "",
+      agenda: "",
+      books:""
     });
     setWarning({
       error: false,
@@ -295,14 +297,14 @@ const CreateStudent = () => {
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="D. Ingreso"
                 id="admission"
               />
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Matrícula"
                 id="tuition"
               />
@@ -311,14 +313,14 @@ const CreateStudent = () => {
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Marzo"
                 id="march"
               />
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Abril"
                 id="april"
               />
@@ -327,14 +329,14 @@ const CreateStudent = () => {
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Mayo"
                 id="may"
               />
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Junio"
                 id="june"
               />
@@ -343,14 +345,14 @@ const CreateStudent = () => {
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Julio"
                 id="july"
               />
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Agosto"
                 id="august"
               />
@@ -359,14 +361,14 @@ const CreateStudent = () => {
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Septiembre"
                 id="september"
               />
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Octubre"
                 id="october"
               />
@@ -375,16 +377,33 @@ const CreateStudent = () => {
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Noviembre"
                 id="november"
               />
               <Input
                 values={payments}
                 setValues={setPayments}
-                type="text"
+                type="number"
                 label="Diciembre"
                 id="december"
+              />
+            </div>
+            <div className="row">
+              
+            <Input
+                values={payments}
+                setValues={setPayments}
+                type="number"
+                label="Agenda"
+                id="agenda"
+              />
+              <Input
+                values={payments}
+                setValues={setPayments}
+                type="number"
+                label="Libros"
+                id="books"
               />
             </div>
           </div>

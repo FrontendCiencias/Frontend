@@ -91,8 +91,8 @@ export const createStudents = student => {
     })
 };
 
-export const searchStudents = student => {
-  return fetch(`${API}/student/dni`, {
+export const modifyStudents = student => {
+  return fetch(`${API}/student/modify`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -100,6 +100,24 @@ export const searchStudents = student => {
     },
     mode: 'cors',
     body: JSON.stringify(student)
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
+export const searchStudents = dni => {
+  return fetch(`${API}/student/dni`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
+    },
+    mode: 'cors',
+    body: JSON.stringify(dni)
   })
     .then(response => {
       return response.json();

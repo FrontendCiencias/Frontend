@@ -95,6 +95,10 @@ export const formatGrade = (format, grade) => {
       0: '5to de secundaria',
       1: '5S'
     },
+    '':{
+      0:'',
+      1:''
+    }
   }
   return grades[grade][format]
 }
