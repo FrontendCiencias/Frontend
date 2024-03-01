@@ -110,15 +110,16 @@ export const modifyStudents = student => {
 };
 
 export const imageStudents = student => {
-  console.log(student)
+  console.log(student.image)
   const form = new FormData();
-  for (let key in student) {
-    form.append(key, student[key]);
+  form.append("dni",student.dni)
+  form.append("image",student.image)
+  for (var key of form.entries()) {
+    console.log(key[0] + ', ' + key[1]);
   }
   return fetch(`${API}/student/image`, {
     method: "post",
     headers: {
-      "Content-Type": "application/json",
       "Authorization": `Bearer ${getToken()}`
     },
     mode: 'cors',

@@ -16,7 +16,9 @@ const ImageStudent = () => {
   
   const [file, setFile] = useState(null);
   const [student, setStudent] = useState({
-    url:"",
+    image:{
+      url:""
+    },
     names: {
       name1:"",
       name2:"",
@@ -99,7 +101,7 @@ const ImageStudent = () => {
 
           <div className="row">
             <CardStudent
-              url={student.url}
+              url={student.image.url}
               name1={student.names.name1}
               name2={student.names.name2}
               surname1={student.names.surname1}
