@@ -9,7 +9,7 @@ class CardStudent extends React.Component {
   return (
     <div className="card-student">
         <div className="left">
-            <img src={url}/>
+            <img src={url ? url : "https://previews.123rf.com/images/jumpingxiii/jumpingxiii2211/jumpingxiii221100703/194290339-lindo-vector-de-dibujos-animados-fantasma-dise%C3%B1o-de-personajes-fantasmas-cartel-de-halloween.jpg"}/>
         </div>
         <div className="right">
             <h1>{name1} {name2}</h1>

@@ -109,6 +109,29 @@ export const modifyStudents = student => {
     })
 };
 
+export const imageStudents = student => {
+  console.log(student)
+  const form = new FormData();
+  for (let key in student) {
+    form.append(key, student[key]);
+  }
+  return fetch(`${API}/student/image`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
+    },
+    mode: 'cors',
+    body: form
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
 export const searchStudents = dni => {
   return fetch(`${API}/student/dni`, {
     method: "post",

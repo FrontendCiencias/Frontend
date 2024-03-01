@@ -48,7 +48,7 @@ const NormalAttendance = () => {
         console.log("1")
         setLastStudent({
           url:"https://www.shutterstock.com/image-photo/ghost-costume-made-white-sheet-260nw-2360095435.jpg",
-          name1:"Pene",
+          name1:"Troste",
           name2:"",
           surname1:"",
           surname2:"",

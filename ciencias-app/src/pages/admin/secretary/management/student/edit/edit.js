@@ -7,12 +7,21 @@ import Profile from "../../../../../../components/session/profile/profile.compon
 import Input from "../../../../../../components/input/input.component";
 import Select from "../../../../../../components/select/select.component";
 import { ActionButton } from "../../../../../../components/buttons/action/action-button.component";
-import { formatCollegue, formatMonth } from "../../../../../../functions/collegue.function";
+import { formatCollegue, formatGrade, formatInverseMonth, formatMonth, grades } from "../../../../../../functions/collegue.function";
 
 const EditStudent = () => {
   let { dni } = useParams();
   const collegue = useSelector((state) => state.collegue);
   
+
+  const showError = () => (
+    warning.error &&
+    (<div className="error">
+      {warning.error}
+    </div>)
+  )
+
+
   const [names, setNames] = useState({
     name1: "",
     name2: "",
@@ -48,7 +57,7 @@ const EditStudent = () => {
         phone: d.phone,
         origin: d.origin,
         birth_day: fecha.getDate(),
-        birth_month: fecha.getMonth() + 1,
+        birth_month: formatInverseMonth(fecha.getMonth() + 1),
         birth_year: fecha.getFullYear(),
         grade: d.grade,
       })
@@ -60,7 +69,10 @@ const EditStudent = () => {
   useEffect(() => {
     console.log("namesitos", names);
   }, [names]);
-  
+
+  useEffect(() => {
+    console.log("datita rica", data);
+  }, [data]);
 
   const cancel = () => {
     setNames({
@@ -86,6 +98,7 @@ const EditStudent = () => {
       redirect: true,
     })
   };
+
 
   const clickSubmit = (event) => {
     event.preventDefault();
@@ -123,6 +136,7 @@ const EditStudent = () => {
         setWarning({ error: false, loading: false, redirect: true });
       }
     });
+
   };
   const redirectBack = () => {
     if (warning.redirect) {
@@ -137,9 +151,6 @@ const EditStudent = () => {
         <Brand text={collegueState} link="/app/admin/secretary"/>
       </div>
       <div className="content">
-        <p>
-          {dni}
-          </p>
           {redirectBack()}
         <div className="inputs">
           <div className="col">
@@ -221,12 +232,12 @@ const EditStudent = () => {
                   label="Procedencia"
                   id="origin"
                 />
-                <Input
+                <Select
                   values={data}
                   setValues={setData}
-                  type="text"
                   label="Grado"
                   id="grade"
+                  options={grades()}
                 />
               </div>
               
@@ -275,6 +286,7 @@ const EditStudent = () => {
 
         </div>
           
+      {showError()}
         <div className="row buttons">
           <a onClick={cancel}>
             <ActionButton text="Cancelar" type="secondary" />

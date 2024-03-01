@@ -23,6 +23,7 @@ import IndexPay from "../pages/admin/secretary/payments/pay/index/index.page.js"
 import PayPension from "../pages/admin/secretary/payments/pay/pension/pay.page.js";
 import PayPensionByID from "../pages/admin/secretary/payments/pay/pension/paybyid.page.js";
 import EditStudent from "../pages/admin/secretary/management/student/edit/edit.js";
+import ImageStudent from "../pages/admin/secretary/management/student/image/image.js";
 
 const Router = () => {
   return (
@@ -38,6 +39,7 @@ const Router = () => {
         <Route path = "/app/admin/secretary/management" exact element = {<SecretaryRoute><IndexManagement/></SecretaryRoute>} />
         <Route path = "/app/admin/secretary/management/student" exact element = { <SecretaryRoute><IndexStudentManagement/></SecretaryRoute> } />
         <Route path = "/app/admin/secretary/management/student/edit/:dni" exact element = { <SecretaryRoute><EditStudent/></SecretaryRoute> } />
+        <Route path = "/app/admin/secretary/management/student/image/:dni" exact element = { <SecretaryRoute><ImageStudent/></SecretaryRoute> } />
         <Route path = "/app/admin/secretary/management/student/create" exact element = { <SecretaryRoute><CreateStudent/></SecretaryRoute> } />
         <Route path = "/app/admin/secretary/payments" exact element = { <SecretaryRoute><IndexPayments/></SecretaryRoute> } />
         <Route path = "/app/admin/secretary/payments/pay" exact element = { <SecretaryRoute><IndexPay/></SecretaryRoute> } />

@@ -13,7 +13,7 @@ export const Select = (props) => {
         <label>{label}</label>
       <select
         onChange={(event) => setValues({ ...values, [id]: event.target.value })}
-        value={values.id} id={id} type={type} required >
+        value={values[id]} id={id} type={type} required >
             <option value="select"></option>
         {viewOptions()}
         </select>
