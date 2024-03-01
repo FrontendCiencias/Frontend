@@ -101,7 +101,7 @@ const ImageStudent = () => {
 
           <div className="row">
             <CardStudent
-              url={student.image.url}
+              url={student.image ? student.image.url : ""}
               name1={student.names.name1}
               name2={student.names.name2}
               surname1={student.names.surname1}
