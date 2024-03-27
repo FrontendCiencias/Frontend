@@ -19,7 +19,7 @@ const IndexAuxiliar = () => {
             collegue={collegueState}
           />
         </Link>
-        <Link to='./attendance'>
+        <Link to='./attendance/normal'>
           <MainButton
             text='Asistencia'
             collegue={collegueState}

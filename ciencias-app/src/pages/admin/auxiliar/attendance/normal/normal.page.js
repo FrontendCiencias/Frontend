@@ -12,7 +12,7 @@ import { formatGrade, grades } from "../../../../../functions/collegue.function"
 import { useState } from "react";
 import { List } from "../../../../../components/list/list.component";
 import { studentAttendanceN } from "../../../../../api/auxiliar.api";
-import { codeError } from "../../../../../functions/error.function";
+import { codeAttendance, codeError } from "../../../../../functions/error.function";
 import { searchStudents } from "../../../../../api/secretary.api";
 import CardStudent from "../../../../../components/cards/student";
 
@@ -22,8 +22,11 @@ const NormalAttendance = () => {
   const [student, setStudent] = useState({
     dni: ""
   });
+
+  //https://i.pinimg.com/originals/69/e5/52/69e552caef1e445eaabffb6f2abfbbbd.jpg
+  // para tardanzas xd
   const [laststudent, setLastStudent] = useState({
-    url:"https://e7.pngegg.com/pngimages/867/212/png-clipart-tweety-bird-thumbnail.png",
+    state:"",
     name1:"",
     name2:"",
     surname1:"",
@@ -47,10 +50,10 @@ const NormalAttendance = () => {
         })
         console.log("1")
         setLastStudent({
-          url:"https://www.shutterstock.com/image-photo/ghost-costume-made-white-sheet-260nw-2360095435.jpg",
-          name1:"Troste",
+          state:"E",
+          name1:"Oh ñoo",
           name2:"",
-          surname1:"",
+          surname1:codeError(d.error),
           surname2:"",
           grade:""
         })
@@ -59,12 +62,12 @@ const NormalAttendance = () => {
         console.log(d)
         setError("Asistencia tomada correctamente")
         setLastStudent({
-          url:"https://e7.pngegg.com/pngimages/867/212/png-clipart-tweety-bird-thumbnail.png",
-          name1:d.student.names.name1,
-          name2:d.student.names.name2,
-          surname1:d.student.names.surname1,
-          surname2:d.student.names.surname2,
-          grade:d.student.grade
+          state:d.state,
+          name1:d.names.name1,
+          name2:d.names.name2,
+          surname1:d.names.surname1,
+          surname2:d.names.surname2,
+          grade:d.grade
         })
         setStudent({
           dni: ""
@@ -103,9 +106,9 @@ const NormalAttendance = () => {
             collegue={collegueState}
           />
         </form>
-        {showError()}
+        {/* {showError()} */}
         <CardStudent
-          url={laststudent.url}
+          state={laststudent.state}
           name1={laststudent.name1}
           name2={laststudent.name2}
           surname1={laststudent.surname1}
