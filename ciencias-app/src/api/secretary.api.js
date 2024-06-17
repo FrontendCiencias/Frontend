@@ -161,7 +161,6 @@ export const searchAllStudents = () => {
     mode: 'cors',
   })
     .then(response => {
-      console.log("hola")
       return response.json();
     })
     .catch(err => {

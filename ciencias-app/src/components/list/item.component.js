@@ -23,7 +23,7 @@ export const Item = (props) => {
     <tr className="items" key={k}>
       <td className='surnames'>{surnames}</td>
       <td className='names'>{names}</td>
-      <td className='action'>
+      {/* <td className='action'>
         <Link to={'/app/admin/secretary/management/student/image/'+dni}>
           <ActionButton
             text={'I'}
@@ -31,7 +31,7 @@ export const Item = (props) => {
             size="small"
             />
         </Link>
-      </td>
+      </td> */}
       {button()}  
     </tr>
   )

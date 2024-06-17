@@ -24,6 +24,7 @@ import PayPension from "../pages/admin/secretary/payments/pay/pension/pay.page.j
 import PayPensionByID from "../pages/admin/secretary/payments/pay/pension/paybyid.page.js";
 import EditStudent from "../pages/admin/secretary/management/student/edit/edit.js";
 import ImageStudent from "../pages/admin/secretary/management/student/image/image.js";
+import Comportamiento from "../pages/admin/auxiliar/comportamiento/page.js";
 
 const Router = () => {
   return (
@@ -51,6 +52,7 @@ const Router = () => {
         <Route path = "/app/admin/auxiliar" exact element = { <AuxiliarRoute><IndexAuxiliar/></AuxiliarRoute>} />
         <Route path = "/app/admin/auxiliar/attendance" exact element = { <AuxiliarRoute><IndexAttendance/></AuxiliarRoute>} />
         <Route path = "/app/admin/auxiliar/attendance/normal" exact element = { <AuxiliarRoute><NormalAttendance/></AuxiliarRoute>} />
+        <Route path = "/app/admin/auxiliar/califications" exact element = { <AuxiliarRoute><Comportamiento/></AuxiliarRoute>} />
 
         <Route path = "/test" exact element = { <Test/> } />
 
