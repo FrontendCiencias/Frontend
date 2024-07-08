@@ -72,3 +72,22 @@ export const studentAttendanceN = (d) => {
     })
 };
 
+
+
+export const attendanceClassroom = (d) => {
+  return fetch(`${API}/attendance/classroom`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getToken()}`
+    },
+    mode: 'cors',
+    body: JSON.stringify(d)
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};

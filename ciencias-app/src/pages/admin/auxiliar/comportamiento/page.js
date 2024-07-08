@@ -10,6 +10,7 @@ import Profile from "../../../../components/session/profile/profile.component";
 import { List } from "../../../../components/list/list.component.js";
 import { getCollegue, grades } from "../../../../functions/collegue.function.js";
 import { SearchList } from "../../../../components/list/searchlist.component.js";
+import { Table } from "../../../../components/table/table.js";
 
 const Comportamiento = () => {
   const studentsState = useSelector((state) => state.students);
@@ -37,7 +38,7 @@ const Comportamiento = () => {
         <Brand text={collegueState} link="/app/admin/secretary/signin" />
       </div>
       <div className="content">
-        <SearchList action="Ver asistencia" link="/app/admin/auxiliar"/>
+        <Table grade="1ro_secundaria" section="A" month="04"/>
       </div>
       <Profile />
     </div>
