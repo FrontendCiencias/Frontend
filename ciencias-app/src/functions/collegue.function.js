@@ -36,14 +36,23 @@ export const formatMonth = (month) => {
 export const formatInverseMonth = (month) => {
   const months = {
     "1": "Enero",
+    "01": "Enero",
     "2": "Febrero",
+    "02": "Febrero",
     "3": "Marzo",
+    "03": "Marzo",
     "4": "Abril",
+    "04": "Abril",
     "5": "Mayo",
+    "05": "Mayo",
     "6": "Junio",
+    "06": "Junio",
     "7": "Julio",
+    "07": "Julio",
     "8": "Agosto",
+    "08": "Agosto",
     "9": "Septiembre",
+    "09": "Septiembre",
     "10": "Octubre",
     "11": "Noviembre",
     "12": "Diciembre"
@@ -145,4 +154,62 @@ export const formatCollegue = (g, collegue) => {
     return "Colegio Cimas"
   }
   return grades[g]
+}
+
+export const formatSections = (s) => {
+  const sections = {
+    '1A': {
+      0: "1ro_secundaria",
+      1: "A"
+    },
+    '1E': {
+      0: "1ro_secundaria",
+      1: "E"
+    },
+    '2A': {
+      0: "2do_secundaria",
+      1: "A"
+    },
+    '2E': {
+      0: "2do_secundaria",
+      1: "E"
+    },
+    '3A': {
+      0: "3ro_secundaria",
+      1: "A"
+    },
+    '3B': {
+      0: "3ro_secundaria",
+      1: "B"
+    },
+    '3E': {
+      0: "3ro_secundaria",
+      1: "E"
+    },
+    '4A': {
+      0: "4to_secundaria",
+      1: "A"
+    },
+    '4B': {
+      0: "4to_secundaria",
+      1: "B"
+    },
+    '4E': {
+      0: "4to_secundaria",
+      1: "E"
+    },
+    '5A': {
+      0: "5to_secundaria",
+      1: "A"
+    },
+    '5B': {
+      0: "5to_secundaria",
+      1: "B"
+    },
+    '5E': {
+      0: "5to_secundaria",
+      1: "E"
+    }
+  }
+  return sections[s]
 }

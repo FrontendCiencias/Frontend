@@ -1,0 +1,8 @@
+.adelante {
+  width: 3vw;
+}
+
+.atras {
+  width: 3vw;
+  transform: rotate(180deg);
+}
